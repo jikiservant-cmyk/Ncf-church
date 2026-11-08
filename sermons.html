@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ministries | Makerere University Christian Union</title>
+  <meta name="description" content="MUCU Ministries — Bible study, prayer, worship, evangelism, and leadership training at Makerere University." />
+  <link rel="preload" as="image" href="assets/images/mak-logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="antialiased">
+
+  <nav class="site-nav">
+    <div class="container nav-wrap px-6 md:px-12">
+      <a href="/" class="brand group">
+        <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-mark" />
+        <div class="brand-text">
+          <span class="tracking-tighter">Makerere</span>
+          <span class="tracking-tighter">Christian Union</span>
+        </div>
+      </a>
+      <div class="nav-links hidden md:flex gap-10 items-center">
+        <a href="index.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Home</a>
+        <a href="about.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">About Us</a>
+        <a href="events.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Events</a>
+        <a href="#sermons" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap active">Ministries</a>
+        <a href="contact.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Visit Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="events.html">Events</a>
+      <a href="#sermons" class="active">Ministries</a>
+      <a href="contact.html">Visit Us</a>
+    </div>
+  </nav>
+
+  <section class="relative h-64 w-full overflow-hidden flex items-center justify-center bg-[#2D2B44]">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center text-white reveal">
+      <span class="text-[#D12E8B] font-bold uppercase tracking-widest text-sm mb-2 block">Our Ministries</span>
+      <h1 class="text-4xl md:text-6xl font-black uppercase leading-[0.75]">Ministries</h1>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-16 text-center reveal">Find Your Place</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="link-card group reveal" style="animation-delay:0.1s">
+          <div class="h-32 bg-[#F5F5F5] rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-12 w-12 text-[#D12E8B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 010.707 0.293l5.414 5.414a1 1 0 010.293 0.707V19a2 2 0 01-2 2z" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Bible Study</h3>
+          <p class="text-muted">Weekly groups digging into Scripture together.</p>
+        </article>
+        <article class="link-card group reveal" style="animation-delay:0.3s">
+          <div class="h-32 bg-[#F5F5F5] rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-12 w-12 text-[#D12E8B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c0.594-0.419 1.33-0.604 2.067-0.604 0.737 0 1.473 0.185 2.067 0.604 1.403 0.968 2.256 2.411 2.067 3.861 -0.19 1.45 -1.32 2.72 -2.83 3.296 -0.594 0.229 -1.229 0.375 -1.907 0.375 -0.678 0 -1.313-0.146-1.907-0.375 -1.509-0.576-2.64-1.846-2.83-3.296 -0.189-1.45 0.664-2.893 2.067-3.861zM15 23a3 3 0 100-6 3 3 0 000 6zM7.5 20a3 3 0 100-6 3 3 0 000 6z" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Prayer &amp; Intercession</h3>
+          <p class="text-muted">Standing in prayer for campus, nation, and students.</p>
+        </article>
+        <article class="link-card group reveal" style="animation-delay:0.5s">
+          <div class="h-32 bg-[#F5F5F5] rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-12 w-12 text-[#D12E8B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.749 18.228a4 4 0 00-5.498 0L6.768 20.45A9 9 0 0020.45 6.768l2.228-2.228a4 4 0 000-5.498L18.228 3.248A9 9 0 003.248 18.228z" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Evangelism &amp; Outreach</h3>
+          <p class="text-muted">Sharing Christ with fellow students across campus.</p>
+        </article>
+        <article class="link-card group reveal" style="animation-delay:0.7s">
+          <div class="h-32 bg-[#F5F5F5] rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-12 w-12 text-[#D12E8B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a4 4 0 004 4h12a4 4 0 004-4v-6a2 2 0 00-2-2H11a2 2 0 00-2 2z" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Worship &amp; Praise</h3>
+          <p class="text-muted">Times of praise, thanksgiving, and worship together.</p>
+        </article>
+        <article class="link-card group reveal" style="animation-delay:0.9s">
+          <div class="h-32 bg-[#F5F5F5] rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-12 w-12 text-[#D12E8B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332 0.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332 0.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332 0.477-4.5 1.253" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Leadership Training</h3>
+          <p class="text-muted">Equipping student leaders to serve with integrity.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="footer-grid">
+        <div class="footer-brand space-y-8">
+          <a href="/" class="logo-text group">
+            <span>Makerere</span>
+            <span class="text-[#D12E8B] group-hover:text-white transition-colors">Christian Union</span>
+          </a>
+          <p class="footer-desc font-body">
+            A student-led Christian fellowship at Makerere University. Preaching Christ,
+            ministering God's love on campus. Part of FOCUS-Uganda.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3 class="uppercase text-[#D12E8B]">Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sermons.html">Ministries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="uppercase text-[#D12E8B]">Follow Us</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener">Facebook — MukCU Official</a></li>
+            <li><a href="https://www.mukchristianunion.org" target="_blank" rel="noopener">mukchristianunion.org</a></li>
+            <li><a href="https://focusuganda.org" target="_blank" rel="noopener">FOCUS-Uganda</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="uppercase text-[#D12E8B]">Location</h3>
+          <ul class="footer-times">
+            <li>Makerere University, Makerere Hill</li>
+            <li>University Road, Kampala, Uganda</li>
+            <li>📞 +256 777 345125</li>
+            <li>✉️ info@mukchristianunion.org</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

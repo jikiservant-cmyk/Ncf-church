@@ -3,149 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Makerere University Christian Union (MUCU)</title>
+  <title>Contact | Makerere University Christian Union</title>
   <meta name="description" content="Get in touch with Makerere University Christian Union — join the fellowship, ask questions, or partner with us at Makerere University, Kampala." />
-  <link rel="preload" as="image" href="assets/images/makerere-main-building.jpg" />
+  <link rel="preload" as="image" href="assets/images/mak-logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="antialiased">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="topbar">
-      <div class="container">
-        <div class="contact">
-          <span>📍 Makerere University, Kampala, Uganda</span>
-          <span>✉️ info@mukchristianunion.org &nbsp;|&nbsp; 📞 +256 777 345125</span>
+  <nav class="site-nav">
+    <div class="container nav-wrap px-6 md:px-12">
+      <a href="/" class="brand group">
+        <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-mark" />
+        <div class="brand-text">
+          <span class="tracking-tighter">Makerere</span>
+          <span class="tracking-tighter">Christian Union</span>
         </div>
-        <div class="social-mini" style="display:flex; gap:10px;">
-          <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">Facebook</a>
-          <span style="opacity:.4;">•</span>
-          <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">mukchristianunion.org</a>
-        </div>
+      </a>
+      <div class="nav-links hidden md:flex gap-10 items-center">
+        <a href="index.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Home</a>
+        <a href="about.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">About Us</a>
+        <a href="events.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Events</a>
+        <a href="sermons.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Ministries</a>
+        <a href="#contact" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap active">Visit Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
       </div>
     </div>
-    <div class="nav-wrap">
-      <div class="container">
-        <div class="brand">
-          <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-logo" />
-          <div class="brand-text">
-            <div class="site-title">Makerere University Christian Union</div>
-            <div class="site-sub">Student Fellowship • Makerere University, Kampala</div>
-          </div>
-        </div>
-
-        <nav class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="#events">Events</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#contact" class="active">Contact</a>
-          <a href="contact.html" class="nav-btn">Join Us</a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="events.html">Events</a>
+      <a href="sermons.html">Ministries</a>
+      <a href="#contact" class="active">Visit Us</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Page banner -->
-  <section class="hero" style="height:42vh; min-height:300px;">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <span class="hero-kicker">Get in Touch</span>
-      <h1 style="font-size:2rem; margin-bottom:10px;">Contact Us</h1>
-      <p style="opacity:.95;">We'd love to hear from you — whether you're a student, alumnus, or friend.</p>
+  <section class="relative h-64 w-full overflow-hidden flex items-center justify-center bg-[#2D2B44]">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center text-white reveal">
+      <span class="text-[#D12E8B] font-bold uppercase tracking-widest text-sm mb-2 block">Get in Touch</span>
+      <h1 class="text-4xl md:text-6xl font-black uppercase leading-[0.75]">Contact Us</h1>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <h3>📍 Visit Us</h3>
-          <div class="contact-item">
-            <span class="icon">🏛️</span>
-            <div class="text">
-              <h4>Makerere University</h4>
-              <p>Makerere Hill, University Road<br>Kampala, Uganda</p>
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="reveal" style="animation-delay:0.1s">
+          <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-8">Visit Us</h2>
+          <div class="space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-[#F5F5F5] flex items-center justify-center shrink-0 text-[#D12E8B]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+              </div>
+              <div>
+                <p class="font-black text-primary mb-1">Makerere University</p>
+                <p class="text-muted">Makerere Hill, University Road / St Francis, Kampala, Uganda</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-[#F5F5F5] flex items-center justify-center shrink-0 text-[#D12E8B]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.2a2 2 0 012 2v14l-5-2.56a2 2 0 01-2.4-1.68V5z" /></svg>
+              </div>
+              <div>
+                <p class="font-black text-primary mb-1">Phone</p>
+                <p class="text-muted">+256 777 345125</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-[#F5F5F5] flex items-center justify-center shrink-0 text-[#D12E8B]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <div>
+                <p class="font-black text-primary mb-1">Email</p>
+                <p class="text-muted">info@mukchristianunion.org</p>
+              </div>
             </div>
           </div>
-          <div class="contact-item">
-            <span class="icon">✉️</span>
-            <div class="text">
-              <h4>Email</h4>
-              <p>info@mukchristianunion.org</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="icon">📞</span>
-            <div class="text">
-              <h4>Phone</h4>
-              <p>+256 777 345125</p>
-            </div>
-          </div>
-          <div class="socials">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-              <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" title="Facebook">f</a>
-              <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" title="Website">🌐</a>
-              <a href="https://focusuganda.org" target="_blank" rel="noopener" title="FOCUS-Uganda">🤝</a>
+          <div class="mt-8">
+            <p class="font-black text-primary uppercase mb-3 text-sm tracking-widest">Follow Us</p>
+            <div class="flex gap-4">
+              <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" class="h-10 w-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#D12E8B] hover:bg-[#D12E8B] hover:text-white transition-colors">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.092 3.038 9.45 7.273 11.162v-7.624h-3.15v-3.15h3.15V8.523c0-2.488 1.385-4.078 3.713-4.078 1.104 0 2.164 0.137 2.44 0.206v3.37h-1.558c-1.207 0-1.473 0.539-1.473 1.245v1.703h2.57l-0.438 3.15h-2.13v7.624c4.235-1.712 7.273-6.07 7.273-11.162z" /></svg>
+              </a>
+              <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" class="h-10 w-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#D12E8B] hover:bg-[#D12E8B] hover:text-white transition-colors">🌐</a>
             </div>
           </div>
         </div>
 
-        <div class="contact-form">
-          <h3>Send Us a Message</h3>
-          <form id="contactForm" novalidate>
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="e.g. Jane Namutebi" required />
+        <div class="reveal" style="animation-delay:0.3s">
+          <form id="contactForm" class="space-y-6">
+            <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-8">Send Us a Message</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-primary mb-2 uppercase tracking-widest">Full Name</label>
+                <input type="text" name="name" placeholder="e.g. Jane Namutebi" required class="w-full px-4 py-3 rounded-lg border border-[#2D2B44]/20 bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#D12E8B]" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-primary mb-2 uppercase tracking-widest">Email Address</label>
+                <input type="email" name="email" placeholder="jane@example.com" required class="w-full px-4 py-3 rounded-lg border border-[#2D2B44]/20 bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#D12E8B]" />
+              </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-            </div>
-            <div class="form-group">
-              <label for="role">I am a...</label>
-              <select id="role" name="role" style="width:100%; padding:11px 14px; border:1px solid var(--border); border-radius:6px; font-family:inherit; font-size:0.95rem;">
+            <div>
+              <label class="block text-sm font-bold text-primary mb-2 uppercase tracking-widest">I am a...</label>
+              <select name="role" required class="w-full px-4 py-3 rounded-lg border border-[#2D2B44]/20 bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#D12E8B]">
+                <option value="">Select one</option>
                 <option value="student">Makerere University Student</option>
                 <option value="alumnus">Alumnus / Alumna</option>
                 <option value="staff">University Staff</option>
                 <option value="other">Friend / Partner</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+            <div>
+              <label class="block text-sm font-bold text-primary mb-2 uppercase tracking-widest">Message</label>
+              <textarea name="message" rows="5" required placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg border border-[#2D2B44]/20 bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#D12E8B]"></textarea>
             </div>
-            <button type="submit" class="form-btn">Send Message</button>
+            <button type="submit" class="magnetic-btn w-full py-4 rounded-lg font-bold text-lg tracking-widest uppercase">
+              Send Message
+              <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </button>
           </form>
-          <p id="formMessage" class="form-message"></p>
+          <p id="formMessage" class="mt-4 text-lg font-bold text-[#D12E8B] hidden">Thanks! Your message has been sent.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container mx-auto px-6 md:px-12">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="site-title">Makerere University Christian Union</div>
-          <p>A student-led Christian fellowship at Makerere University. Preaching Christ, ministering God's love on campus.</p>
+        <div class="footer-brand space-y-8">
+          <a href="/" class="logo-text group">
+            <span>Makerere</span>
+            <span class="text-[#D12E8B] group-hover:text-white transition-colors">Christian Union</span>
+          </a>
+          <p class="footer-desc font-body">
+            A student-led Christian fellowship at Makerere University. Preaching Christ,
+            ministering God's love on campus. Part of FOCUS-Uganda.
+          </p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h3 class="uppercase text-[#D12E8B]">Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sermons.html">Ministries</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Follow Us</h4>
+          <h3 class="uppercase text-[#D12E8B]">Follow Us</h3>
           <ul>
             <li><a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener">Facebook — MukCU Official</a></li>
             <li><a href="https://www.mukchristianunion.org" target="_blank" rel="noopener">mukchristianunion.org</a></li>
@@ -153,22 +168,38 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Location</h4>
-          <ul>
+          <h3 class="uppercase text-[#D12E8B]">Location</h3>
+          <ul class="footer-times">
             <li>Makerere University, Makerere Hill</li>
-            <li>University Road, Kampala</li>
+            <li>University Road, Kampala, Uganda</li>
             <li>📞 +256 777 345125</li>
             <li>✉️ info@mukchristianunion.org</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</span>
-        <span>Part of FOCUS-Uganda</span>
+        <p>© <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      btn.innerHTML = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.disabled = false;
+        this.reset();
+        const msg = document.getElementById('formMessage');
+        msg.classList.remove('hidden');
+        setTimeout(() => msg.classList.add('hidden'), 7000);
+      }, 1200);
+    });
+  </script>
 </body>
 </html>

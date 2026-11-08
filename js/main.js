@@ -1,171 +1,133 @@
 /* ==========================================================================
-   Makerere University Christian Union (MUCU) — Interactive Scripts
+   MUCU — Studio Design Interactions
+   Mobile nav, magnetic buttons, scroll reveals, kinetic typography
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
-  initActiveLink();
-  initLightbox();
-  initContactForm();
+  initMagneticButtons();
   initScrollReveal();
+  initKineticHeadlines();
+  initBlurFocus();
   setCurrentYear();
 });
 
 /* ---------- Mobile nav toggle ---------- */
 function initMobileNav() {
   const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav-links");
-
-  if (!toggle || !nav) return;
+  const menu = document.querySelector(".mobile-menu");
+  if (!toggle || !menu) return;
 
   toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
+    const open = menu.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open);
   });
 
-  // Close menu when a link is clicked
-  nav.querySelectorAll("a").forEach((link) => {
+  menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("open");
+      menu.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
     });
   });
 }
 
-/* ---------- Highlight active nav link on scroll ---------- */
-function initActiveLink() {
-  const links = document.querySelectorAll(".nav-links a[href^='#']");
-  const sections = Array.from(links)
-    .map((a) => document.querySelector(a.getAttribute("href")))
-    .filter(Boolean);
+/* ---------- Magnetic buttons ---------- */
+function initMagneticButtons() {
+  document.querySelectorAll(".magnetic-wrap").forEach((wrap) => {
+    const btn = wrap.querySelector(".magnetic-btn");
+    if (!btn) return;
 
-  if (!links.length || !sections.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          links.forEach((a) => a.classList.remove("active"));
-          const active = document.querySelector(
-            `.nav-links a[href="#${entry.target.id}"]`
-          );
-          if (active) active.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.25, rootMargin: "-80px 0% -70% 0%" }
-  );
-
-  sections.forEach((sec) => observer.observe(sec));
-}
-
-/* ---------- Image lightbox (gallery) ---------- */
-function initLightbox() {
-  const items = document.querySelectorAll(".gallery-item");
-  const lightbox = document.querySelector(".lightbox");
-  if (!items.length || !lightbox) return;
-
-  const closeBtn = lightbox.querySelector(".close");
-
-  items.forEach((item) => {
-    item.addEventListener("click", () => {
-      const img = item.querySelector("img");
-      lightbox.querySelector("img").src = img.src;
-      lightbox.querySelector("img").alt = img.alt;
-      lightbox.classList.add("open");
-      document.body.style.overflow = "hidden";
+    let x = 0, y = 0;
+    wrap.addEventListener("mousemove", (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 20);
+      const dy = (e.clientY - cy) / (rect.height / 20);
+      x = dx; y = dy;
+      wrap.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+    });
+    wrap.addEventListener("mouseleave", () => {
+      x = 0; y = 0;
+      wrap.style.transform = `translate3d(0, 0, 0)`;
     });
   });
-
-  const closeLightbox = () => {
-    lightbox.classList.remove("open");
-    document.body.style.overflow = "";
-  };
-
-  closeBtn.addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("open")) {
-      closeLightbox();
-    }
-  });
 }
 
-/* ---------- Contact form (frontend) ---------- */
-function initContactForm() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
-
-  const msg = document.getElementById("formMessage");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = form.elements["name"].value.trim();
-    const email = form.elements["email"].value.trim();
-    const message = form.elements["message"].value.trim();
-
-    if (!name || !email || !message) {
-      showMessage(msg, "Please fill in all fields.", "error");
-      return;
-    }
-
-    // Simulate submission; replace with Formspree/Netlify endpoint in production
-    const btn = form.querySelector(".form-btn");
-    const originalText = btn.textContent;
-    btn.textContent = "Sending…";
-    btn.disabled = true;
-
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.disabled = false;
-      form.reset();
-      showMessage(msg, "Thanks! Your message has been sent. We'll get back to you soon.", "success");
-    }, 1200);
-  });
-}
-
-function showMessage(el, text, type) {
-  el.textContent = text;
-  el.className = `form-message ${type}`;
-  el.style.display = "block";
-  setTimeout(() => {
-    el.style.display = "none";
-  }, 7000);
-}
-
-/* ---------- Simple scroll reveal ---------- */
+/* ---------- Scroll reveal ---------- */
 function initScrollReveal() {
-  const revealEls = document.querySelectorAll(
-    ".about-img, .about-text p, .highlight-list li, .event-card, .gallery-item, .contact-card, .contact-form"
-  );
-  if (!revealEls.length) return;
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
+          entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.12 }
   );
-
-  revealEls.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(22px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
 
-/* ---------- Current year in footer ---------- */
+/* ---------- Kinetic headlines (reveal on scroll) ---------- */
+function initKineticHeadlines() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll(".kinetic-line").forEach((line, i) => {
+            line.style.animationDelay = `${i * 0.15}s`;
+            line.classList.add("kinetic-visible");
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll(".kinetic-wrap").forEach((el) => observer.observe(el));
+}
+
+/* ---------- Blur-focus images ---------- */
+function initBlurFocus() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("focused");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll(".vision-img").forEach((img) => observer.observe(img));
+}
+
+/* ---------- Active nav link on scroll ---------- */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+if (sections.length && navLinks.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((a) => {
+            a.classList.remove("active");
+            if (a.getAttribute("href") === `#${entry.target.id}`) {
+              a.classList.add("active");
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.25, rootMargin: "-100px 0% -60% 0%" }
+  );
+  sections.forEach((s) => observer.observe(s));
+}
+
+/* ---------- Footer year ---------- */
 function setCurrentYear() {
   const el = document.getElementById("year");
   if (el) el.textContent = new Date().getFullYear();

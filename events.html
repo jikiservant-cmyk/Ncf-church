@@ -3,178 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events | Makerere University Christian Union (MUCU)</title>
+  <title>Events | Makerere University Christian Union</title>
   <meta name="description" content="Upcoming Makerere University Christian Union events — weekly fellowships, Bible studies, prayer meetings, retreats and outreach." />
-  <link rel="preload" as="image" href="assets/images/makerere-main-building.jpg" />
-  <link rel="preload" as="image" href="assets/images/mucu-fellowship.jpg" />
+  <link rel="preload" as="image" href="assets/images/mak-logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="antialiased">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="topbar">
-      <div class="container">
-        <div class="contact">
-          <span>📍 Makerere University, Kampala, Uganda</span>
-          <span>✉️ info@mukchristianunion.org &nbsp;|&nbsp; 📞 +256 777 345125</span>
+  <nav class="site-nav">
+    <div class="container nav-wrap px-6 md:px-12">
+      <a href="/" class="brand group">
+        <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-mark" />
+        <div class="brand-text">
+          <span class="tracking-tighter">Makerere</span>
+          <span class="tracking-tighter">Christian Union</span>
         </div>
-        <div class="social-mini" style="display:flex; gap:10px;">
-          <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">Facebook</a>
-          <span style="opacity:.4;">•</span>
-          <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">mukchristianunion.org</a>
-        </div>
+      </a>
+      <div class="nav-links hidden md:flex gap-10 items-center">
+        <a href="index.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Home</a>
+        <a href="about.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">About Us</a>
+        <a href="#events" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap active">Events</a>
+        <a href="sermons.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Ministries</a>
+        <a href="contact.html" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Visit Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
       </div>
     </div>
-    <div class="nav-wrap">
-      <div class="container">
-        <div class="brand">
-          <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-logo" />
-          <div class="brand-text">
-            <div class="site-title">Makerere University Christian Union</div>
-            <div class="site-sub">Student Fellowship • Makerere University, Kampala</div>
-          </div>
-        </div>
-
-        <nav class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="#events" class="active">Events</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#contact">Contact</a>
-          <a href="contact.html" class="nav-btn">Join Us</a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="#events" class="active">Events</a>
+      <a href="sermons.html">Ministries</a>
+      <a href="contact.html">Visit Us</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Page banner -->
-  <section class="hero" style="height:42vh; min-height:300px;">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <span class="hero-kicker">Fellowship Calendar</span>
-      <h1 style="font-size:2rem; margin-bottom:10px;">Upcoming Events</h1>
-      <p style="opacity:.95;">Weekly fellowships, Bible studies, prayer and campus events at Makerere University.</p>
+  <section class="relative h-64 w-full overflow-hidden flex items-center justify-center bg-[#2D2B44]">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center text-white reveal">
+      <span class="text-[#D12E8B] font-bold uppercase tracking-widest text-sm mb-2 block">Fellowship Calendar</span>
+      <h1 class="text-4xl md:text-6xl font-black uppercase leading-[0.75]">Upcoming Events</h1>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="weekly">
-        <h3 style="color:var(--primary); margin-bottom:8px;">Weekly Rhythm</h3>
-        <p style="margin-bottom:14px;">Join us throughout the week for fellowship and the Word. Times and venues are confirmed weekly — follow our Facebook for the latest.</p>
-        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-          <div style="background:#fff;padding:14px 22px;border-radius:8px;border:1px solid var(--border);">
-            <div style="font-size:0.8rem;color:var(--secondary);font-weight:700;text-transform:uppercase;">Sunday</div>
-            <div style="font-weight:700; color:var(--primary);">Worship &amp; Word Service</div>
-          </div>
-          <div style="background:#fff;padding:14px 22px;border-radius:8px;border:1px solid var(--border);">
-            <div style="font-size:0.8rem;color:var(--secondary);font-weight:700;text-transform:uppercase;">Wednesday</div>
-            <div style="font-weight:700; color:var(--primary);">Midweek Bible Study &amp; Prayer</div>
-          </div>
-          <div style="background:#fff;padding:14px 22px;border-radius:8px;border:1px solid var(--border);">
-            <div style="font-size:0.8rem;color:var(--secondary);font-weight:700;text-transform:uppercase;">Friday</div>
-            <div style="font-weight:700; color:var(--primary);">Prayer &amp; Intercession</div>
-          </div>
+  <section class="py-20 bg-[#F5F5F5]">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="max-w-2xl mx-auto mb-16 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-black text-primary uppercase mb-4">Weekly Rhythm</h2>
+        <p class="text-lg text-muted leading-relaxed font-body">
+          Join us throughout the week for fellowship and the Word. Times and venues
+          are confirmed weekly — follow our Facebook for the latest.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal" style="animation-delay:0.1s">
+        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#D12E8B] text-center">
+          <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-3">Sunday</span>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Worship &amp; Word Service</h3>
+          <p class="text-muted">Gathering to worship and hear God's Word.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#D12E8B] text-center">
+          <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-3">Wednesday</span>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Midweek Bible Study &amp; Prayer</h3>
+          <p class="text-muted">Digging into Scripture and praying together.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#D12E8B] text-center">
+          <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-3">Friday</span>
+          <h3 class="text-xl font-black text-primary uppercase mb-2">Prayer &amp; Intercession</h3>
+          <p class="text-muted">Standing in prayer for campus and nation.</p>
         </div>
       </div>
 
-      <div class="section-title text-center" style="margin-top:56px; margin-bottom:10px;">Featured Events</div>
-      <div class="section-sub text-center" style="margin-bottom:30px;">
-        Key gatherings and programmes for the semester.
-      </div>
-
-      <div class="events-grid">
-        <article class="event-card">
-          <img src="assets/images/mucu-fellowship.jpg" alt="MUCU fellowship gathering" />
-          <div class="event-body">
-            <div class="event-meta">This Semester</div>
-            <h3>Freshers' Welcome Fellowship</h3>
-            <p>A warm welcome to all new Makerere students. Come meet the MUCU family, worship, and hear God's Word.</p>
-            <a href="contact.html" class="btn">I'm Attending</a>
-          </div>
+      <div class="mt-16 grid lg:grid-cols-3 gap-6">
+        <article class="link-card group reveal" style="animation-delay:0.2s">
+          <h3 class="text-xl font-black text-primary uppercase">Freshers' Welcome</h3>
+          <p class="text-muted">A warm welcome to all new Makerere students — meet the MUCU family.</p>
+          <span class="text-accent">I'm Attending →</span>
         </article>
-
-        <article class="event-card">
-          <img src="assets/images/mucu-jubilee.jpg" alt="MUCU jubilee celebration" />
-          <div class="event-body">
-            <div class="event-meta">Every Wednesday</div>
-            <h3>Midweek Bible Study &amp; Prayer</h3>
-            <p>Digging into Scripture together, sharing testimonies, and praying for the campus and nation.</p>
-            <a href="contact.html" class="btn">Join Us</a>
-          </div>
+        <article class="link-card group reveal" style="animation-delay:0.4s">
+          <h3 class="text-xl font-black text-primary uppercase">Campus Outreach Week</h3>
+          <p class="text-muted">Reaching fellow students with the gospel across halls and colleges.</p>
+          <span class="text-accent">Volunteer →</span>
         </article>
-
-        <article class="event-card">
-          <img src="assets/images/makerere-main-building.jpg" alt="Makerere University campus" />
-          <div class="event-body">
-            <div class="event-meta">Upcoming</div>
-            <h3>Campus Outreach Week</h3>
-            <p>Reaching fellow students with the gospel of Jesus Christ across Makerere halls and colleges.</p>
-            <a href="contact.html" class="btn">Volunteer</a>
-          </div>
+        <article class="link-card group reveal" style="animation-delay:0.6s">
+          <h3 class="text-xl font-black text-primary uppercase">Student Leadership Training</h3>
+          <p class="text-muted">Equipping MUCU leaders to serve with integrity and lead others to Christ.</p>
+          <span class="text-accent">Register →</span>
         </article>
-
-        <article class="event-card">
-          <img src="assets/images/mucu-fellowship.jpg" alt="MUCU prayer meeting" />
-          <div class="event-body">
-            <div class="event-meta">Every Friday</div>
-            <h3>Prayer &amp; Intercession Night</h3>
-            <p>Standing in prayer for Makerere University, Uganda, and the needs of the student body.</p>
-            <a href="contact.html" class="btn">Pray With Us</a>
-          </div>
-        </article>
-
-        <article class="event-card">
-          <img src="assets/images/mucu-jubilee.jpg" alt="FOCUS Uganda event" />
-          <div class="event-body">
-            <div class="event-meta">Annual</div>
-            <h3>FOCUS-Uganda Convention</h3>
-            <p>Joining students from across Uganda for a national gathering of worship, teaching, and renewal.</p>
-            <a href="https://focusuganda.org" target="_blank" rel="noopener" class="btn">Learn More</a>
-          </div>
-        </article>
-
-        <article class="event-card">
-          <img src="assets/images/makerere-main-building.jpg" alt="Leadership training" />
-          <div class="event-body">
-            <div class="event-meta">This Semester</div>
-            <h3>Student Leadership Training</h3>
-            <p>Equipping MUCU leaders to serve with integrity and lead others to Christ.</p>
-            <a href="contact.html" class="btn">Register</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="cta-band" style="margin-top:46px;">
-        <h2>Don't miss a gathering</h2>
-        <p>Follow us on Facebook for weekly times, venues, and last-minute updates.</p>
-        <a href="contact.html" class="btn btn-primary">Connect With Us</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container mx-auto px-6 md:px-12">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="site-title">Makerere University Christian Union</div>
-          <p>A student-led Christian fellowship at Makerere University. Preaching Christ, ministering God's love on campus.</p>
+        <div class="footer-brand space-y-8">
+          <a href="/" class="logo-text group">
+            <span>Makerere</span>
+            <span class="text-[#D12E8B] group-hover:text-white transition-colors">Christian Union</span>
+          </a>
+          <p class="footer-desc font-body">
+            A student-led Christian fellowship at Makerere University. Preaching Christ,
+            ministering God's love on campus. Part of FOCUS-Uganda.
+          </p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h3 class="uppercase text-[#D12E8B]">Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sermons.html">Ministries</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Follow Us</h4>
+          <h3 class="uppercase text-[#D12E8B]">Follow Us</h3>
           <ul>
             <li><a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener">Facebook — MukCU Official</a></li>
             <li><a href="https://www.mukchristianunion.org" target="_blank" rel="noopener">mukchristianunion.org</a></li>
@@ -182,18 +133,17 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Location</h4>
-          <ul>
+          <h3 class="uppercase text-[#D12E8B]">Location</h3>
+          <ul class="footer-times">
             <li>Makerere University, Makerere Hill</li>
-            <li>University Road, Kampala</li>
+            <li>University Road, Kampala, Uganda</li>
             <li>📞 +256 777 345125</li>
             <li>✉️ info@mukchristianunion.org</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</span>
-        <span>Part of FOCUS-Uganda</span>
+        <p>© <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</p>
       </div>
     </div>
   </footer>

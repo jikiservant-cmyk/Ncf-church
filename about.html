@@ -3,150 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Makerere University Christian Union (MUCU)</title>
-  <meta name="description" content="Learn about Makerere University Christian Union — our vision, mission, history, and values as a student fellowship at Makerere University, Kampala." />
-  <link rel="preload" as="image" href="assets/images/makerere-main-building.jpg" />
-  <link rel="preload" as="image" href="assets/images/mucu-fellowship.jpg" />
+  <title>About Us | Makerere University Christian Union</title>
+  <meta name="description" content="Learn about Makerere University Christian Union — our vision, mission, history, and values." />
+  <link rel="preload" as="image" href="assets/images/mak-logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="antialiased">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="topbar">
-      <div class="container">
-        <div class="contact">
-          <span>📍 Makerere University, Kampala, Uganda</span>
-          <span>✉️ info@mukchristianunion.org &nbsp;|&nbsp; 📞 +256 777 345125</span>
+  <nav class="site-nav">
+    <div class="container nav-wrap px-6 md:px-12">
+      <a href="/" class="brand group">
+        <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-mark" />
+        <div class="brand-text">
+          <span class="tracking-tighter">Makerere</span>
+          <span class="tracking-tighter">Christian Union</span>
         </div>
-        <div class="social-mini" style="display:flex; gap:10px;">
-          <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">Facebook</a>
-          <span style="opacity:.4;">•</span>
-          <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" style="color:#fff;opacity:.9;">mukchristianunion.org</a>
-        </div>
+      </a>
+      <div class="nav-links hidden md:flex gap-10 items-center">
+        <a href="#about" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap active">About Us</a>
+        <a href="#events" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Events</a>
+        <a href="#sermons" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Ministries</a>
+        <a href="#donate" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Donate</a>
+        <a href="#contact" class="text-xs font-medium uppercase tracking-[0.2em] text-white opacity-80 hover:opacity-100 whitespace-nowrap">Visit Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
       </div>
     </div>
-    <div class="nav-wrap">
-      <div class="container">
-        <div class="brand">
-          <img src="assets/images/mak-logo.png" alt="Makerere University logo" class="brand-logo" />
-          <div class="brand-text">
-            <div class="site-title">Makerere University Christian Union</div>
-            <div class="site-sub">Student Fellowship • Makerere University, Kampala</div>
-          </div>
-        </div>
-
-        <nav class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html" class="active">About</a>
-          <a href="#events">Events</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="#contact">Contact</a>
-          <a href="contact.html" class="nav-btn">Join Us</a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="active">About Us</a>
+      <a href="#events">Events</a>
+      <a href="#sermons">Ministries</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Visit Us</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- About banner -->
-  <section class="hero" style="height:42vh; min-height:300px; text-align:left;">
-    <div class="hero-bg"></div>
-    <div class="container" style="display:flex; align-items:center; height:100%;">
-      <div style="color:#fff;">
-        <span class="hero-kicker">About Us</span>
-        <h1 style="font-size:2rem; margin-bottom:10px;">Who We Are</h1>
-        <p style="opacity:.95;">Makerere University Christian Union — preaching Christ on the Ivory Tower.</p>
-      </div>
+  <!-- Page header banner -->
+  <section class="relative h-64 w-full overflow-hidden flex items-center justify-center bg-[#2D2B44]">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center text-white reveal">
+      <span class="text-[#D12E8B] font-bold uppercase tracking-widest text-sm mb-2 block">About Us</span>
+      <h1 class="text-4xl md:text-6xl font-black uppercase leading-[0.75]">Our Story</h1>
     </div>
   </section>
 
-  <!-- Main content -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title text-center" style="margin-bottom:10px;">Our Story</div>
-      <div class="section-sub text-center" style="margin-bottom:40px;">
-        A Christ-centred student fellowship at Makerere University, founded in 1962.
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-black text-primary uppercase leading-tight">Who We Are</h2>
+          <p class="text-lg text-muted leading-relaxed font-body">
+            <strong>Makerere University Christian Union (MUCU / MukCU)</strong> is a student-led Christian
+            fellowship based at Makerere University on Makerere Hill, Kampala, Uganda. We exist to preach
+            Christ and minister God's love to every soul on campus.
+          </p>
+          <p class="text-lg text-muted leading-relaxed font-body">
+            Founded in <strong>1962</strong> by Daniel Kyanda and Bishop Micheal Ssenyimba, MUCU sparked off
+            the Christian Union movement in Uganda — leading to C.Us across the country and the formation of
+            <strong>FOCUS-Uganda</strong> in 1972. MUCU remains a proud member of FOCUS-Uganda.
+          </p>
+        </div>
+        <div>
+          <img src="assets/images/mucu-fellowship.jpg" alt="MUCU fellowship" class="rounded-lg shadow-2xl reveal" style="animation-delay:0.2s" />
+        </div>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text" style="font-size:1.02rem; color:#373737;">
-          <p><strong>Makerere University Christian Union (MUCU / MukCU)</strong> is a student-led Christian fellowship based at Makerere University on Makerere Hill, Kampala, Uganda. We exist to preach Christ and minister God's love to every soul on campus.</p>
-
-          <p>MUCU was founded in <strong>1962</strong> by the likes of Daniel Kyanda and Bishop Micheal Ssenyimba (now retired Vice-Chancellor of Ndejje University). It sparked off the Christian Union movement in Uganda, leading to the formation of C.Us in other universities and institutions across the country, and ultimately the <strong>Fellowship of Christian Unions (FOCUS-Uganda)</strong> in 1972. MUCU remains a proud member of FOCUS-Uganda.</p>
-
-          <p>MUCU brings together all believers in Makerere through its Hall, College and Hostel Fellowships. It is the largest fellowship at the University, with a membership of over 2,000 students. Ministries such as Jesus is King Ministry operate under the MUCU umbrella, and flagship events like the Makerere Night of Redemption are organised by the Union.</p>
-
-          <div class="u-mt-8" style="margin-top:26px;">
-            <h3 style="color:var(--primary); margin-bottom:12px; font-size:1.15rem;">Our Vision &amp; Mission</h3>
-            <p style="margin-bottom:12px;"><strong>Mission:</strong> Preaching Christ, ministering God's love on campus.</p>
-            <p style="margin-bottom:12px;"><strong>Vision:</strong> God's saving grace is abundant to reach every soul on campus.</p>
-            <p><strong>Core values:</strong> Christ-centredness • Integrity • Servant leadership • Unity in diversity • Excellence</p>
+      <div class="mt-16 reveal" style="animation-delay:0.4s">
+        <h3 class="text-2xl font-black text-primary uppercase mb-6">Our Vision &amp; Mission</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="p-6 bg-[#F5F5F5] rounded-lg border-t-4 border-[#D12E8B]">
+            <h4 class="text-lg font-black text-primary uppercase mb-2">Mission</h4>
+            <p class="text-muted leading-relaxed">Preaching Christ, ministering God's love on campus.</p>
+          </div>
+          <div class="p-6 bg-[#F5F5F5] rounded-lg border-t-4 border-[#D12E8B]">
+            <h4 class="text-lg font-black text-primary uppercase mb-2">Vision</h4>
+            <p class="text-muted leading-relaxed">God's saving grace is abundant to reach every soul on campus.</p>
           </div>
         </div>
-        <div class="about-img">
-          <img src="assets/images/mucu-fellowship.jpg" alt="Makerere University Christian Union fellowship gathering" />
-          <div class="badge">Part of FOCUS-Uganda • Founded 1962</div>
-        </div>
       </div>
 
-      <!-- What we do -->
-      <div class="section-title text-center" style="margin-top:56px; margin-bottom:10px;">What We Do</div>
-      <div class="section-sub text-center" style="margin-bottom:34px;">
-        Regular activities that shape our fellowship life at Makerere.
-      </div>
-      <ul class="highlight-list" style="margin-top:8px;">
-        <li>📖 <strong>Weekly Bible studies</strong> — digging into Scripture together</li>
-        <li>🙏 <strong>Prayer meetings</strong> — interceding for the campus and nation</li>
-        <li>🎶 <strong>Worship fellowships</strong> — praise and thanksgiving</li>
-        <li>🤝 <strong>Evangelism &amp; outreach</strong> — sharing Christ with fellow students</li>
-        <li>🏕️ <strong>Retreats &amp; camps</strong> — times of refreshment and renewal</li>
-        <li>💡 <strong>Leadership training</strong> — equipping student leaders</li>
-      </ul>
-
-      <!-- Where we meet -->
-      <div class="section-title text-center" style="margin-top:56px; margin-bottom:10px;">Where We Meet</div>
-      <div class="section-sub text-center" style="margin-bottom:30px;">
-        Fellowships are held at various venues around Makerere University.
-      </div>
-      <div class="contact-card" style="max-width:640px; margin:0 auto;">
-        <h3>📍 Makerere University — Main Campus</h3>
-        <p style="margin-bottom:16px; opacity:0.95;">
-          Makerere Hill, University Road, Kampala, Uganda.<br>
-          The fellowship gathers at designated halls and Christian Union centres around campus. Exact times and venues are shared weekly on our social media.
-        </p>
-        <div class="socials" style="margin-top:20px;">
-          <h4>Stay connected</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" title="Facebook">f</a>
-            <a href="https://www.mukchristianunion.org" target="_blank" rel="noopener" title="Website">🌐</a>
-            <a href="https://focusuganda.org" target="_blank" rel="noopener" title="FOCUS-Uganda">🤝</a>
+      <div class="mt-16 reveal" style="animation-delay:0.6s">
+        <h3 class="text-2xl font-black text-primary uppercase mb-6">Core Values</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 bg-white border border-[#2D2B44]/10 rounded-lg shadow-sm">
+            <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-2">Christ-centredness</span>
+            <p class="text-sm text-muted leading-relaxed">Christ at the centre of all we do.</p>
+          </div>
+          <div class="p-6 bg-white border border-[#2D2B44]/10 rounded-lg shadow-sm">
+            <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-2">Integrity</span>
+            <p class="text-sm text-muted leading-relaxed">Living truthfully and honourably.</p>
+          </div>
+          <div class="p-6 bg-white border border-[#2D2B44]/10 rounded-lg shadow-sm">
+            <span class="text-[#D12E8B] font-bold text-xs uppercase tracking-widest block mb-2">Servant Leadership</span>
+            <p class="text-sm text-muted leading-relaxed">Leading by serving others.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="container mx-auto px-6 md:px-12">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="site-title">Makerere University Christian Union</div>
-          <p>A student-led Christian fellowship at Makerere University. Preaching Christ, ministering God's love on campus.</p>
+        <div class="footer-brand space-y-8">
+          <a href="/" class="logo-text group">
+            <span>Makerere</span>
+            <span class="text-[#D12E8B] group-hover:text-white transition-colors">Christian Union</span>
+          </a>
+          <p class="footer-desc font-body">
+            A student-led Christian fellowship at Makerere University. Preaching Christ,
+            ministering God's love on campus. Part of FOCUS-Uganda.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener" title="Facebook">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.092 3.038 9.45 7.273 11.162v-7.624h-3.15v-3.15h3.15V8.523c0-2.488 1.385-4.078 3.713-4.078 1.104 0 2.164 0.137 2.44 0.206v3.37h-1.558c-1.207 0-1.473 0.539-1.473 1.245v1.703h2.57l-0.438 3.15h-2.13v7.624c4.235-1.712 7.273-6.07 7.273-11.162z" /></svg>
+            </a>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h3 class="uppercase text-[#D12E8B]">Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sermons.html">Ministries</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Follow Us</h4>
+          <h3 class="uppercase text-[#D12E8B]">Follow Us</h3>
           <ul>
             <li><a href="https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/100064865400507/" target="_blank" rel="noopener">Facebook — MukCU Official</a></li>
             <li><a href="https://www.mukchristianunion.org" target="_blank" rel="noopener">mukchristianunion.org</a></li>
@@ -154,18 +146,17 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Location</h4>
-          <ul>
+          <h3 class="uppercase text-[#D12E8B]">Location</h3>
+          <ul class="footer-times">
             <li>Makerere University, Makerere Hill</li>
-            <li>University Road, Kampala</li>
+            <li>University Road, Kampala, Uganda</li>
             <li>📞 +256 777 345125</li>
             <li>✉️ info@mukchristianunion.org</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</span>
-        <span>Part of FOCUS-Uganda</span>
+        <p>© <span id="year"></span> Makerere University Christian Union (MUCU). All rights reserved.</p>
       </div>
     </div>
   </footer>
