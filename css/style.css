@@ -115,6 +115,15 @@ img {
   font-size: 1.1rem;
 }
 
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 5px;
+  background: #fff;
+  padding: 3px;
+}
+
 .brand-text .site-title {
   font-size: 1.35rem;
   font-weight: 800;
