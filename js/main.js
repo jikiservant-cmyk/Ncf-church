@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Makerere University Scripture Union — Interactive Scripts
+   Makerere University Christian Union (MUCU) — Interactive Scripts
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
