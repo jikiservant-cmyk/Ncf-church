@@ -1,4 +1,4 @@
-/* PDN clone — navigation, index scroll-spy, gallery lightbox, reveal-on-scroll. */
+/* MUK CU clone — navigation, index scroll-spy, gallery lightbox, reveal-on-scroll. */
 (function () {
   'use strict';
 

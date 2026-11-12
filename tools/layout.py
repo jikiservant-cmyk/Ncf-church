@@ -1,7 +1,7 @@
-"""Shared chrome (head, header, nav, footer) for the PDN clone."""
+"""Shared chrome (head, header, nav, footer) for the MUK CU clone."""
 import os
 
-SITE = "Pastors Discipleship Network"
+SITE = "Makerere University Christian Union"
 
 # Absolute base for canonical tags / sitemap. Set SITE_URL when you deploy, e.g.
 #   SITE_URL=https://ncf.church python3 tools/build.py
@@ -23,7 +23,7 @@ NAV = [
         ("Mentorship Profiles", "/mentorship-profiles.html"),
         ("Run Across Uganda", "/run-across-uganda.html"),
     ]),
-    ("PDN Program", "/pastoral-training.html", [
+    ("MUK CU Program", "/pastoral-training.html", [
         ("Pastoral Training", "/pastoral-training.html"),
         ("Youth & Emerging Leaders", "/youthpastorandemergingleaders.html"),
         ("Impacting Women", "/impacting-women.html"),
@@ -99,8 +99,8 @@ def header(active="/index.html"):
 <header class="header">
   <div class="header__inner">
     <a class="brand" href="/index.html">
-      <img class="brand__mark" src="/assets/img/pdn-logo-white.png" alt="PDN logo" width="44" height="53">
-      <span class="brand__text">Pastors<br>Discipleship<br>Network</span>
+      <img class="brand__mark" src="/assets/img/pdn-logo-white.png" alt="MUK CU logo" width="44" height="53">
+      <span class="brand__text">Makerere<br>University<br>Christian Union</span>
     </a>
     <nav class="nav" aria-label="Main navigation">{''.join(desktop)}</nav>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
@@ -172,7 +172,7 @@ def footer():
     <div class="footer__grid">
       <div>
         <div class="footer__brand">
-          <img src="/assets/img/pdn-logo-white.png" alt="PDN logo" width="40" height="48">
+          <img src="/assets/img/pdn-logo-white.png" alt="MUK CU logo" width="40" height="48">
           <span>Pastors<br>Discipleship Network</span>
         </div>
         <p>Training &amp; equipping African pastors to study, practice &amp; teach God's Word accurately.</p>
@@ -191,7 +191,7 @@ def footer():
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="/index.html">About PDN</a></li>
+          <li><a href="/index.html">About MUK CU</a></li>
           <li><a href="/pastoral-training.html">Pastoral Training</a></li>
           <li><a href="/impacting-women.html">Impacting Women</a></li>
           <li><a href="/cornerstone-university.html">Cornerstone University</a></li>
@@ -201,14 +201,14 @@ def footer():
       </div>
       <div>
         <h4>Contact</h4>
-        <p><strong>PDN USA</strong><br>C/O Eden Bridge Foundation<br>909 Eden Rd, Lancaster, PA 17601<br>
+        <p><strong>MUK CU USA</strong><br>C/O Eden Bridge Foundation<br>909 Eden Rd, Lancaster, PA 17601<br>
         <a href="tel:+17175608270">(717) 560-8270</a></p>
-        <p><strong>PDN Uganda Ltd</strong><br>Plot 2312 &amp; 67 Bweyogerere, Kazinga<br>Kira, Wakiso District, Uganda</p>
+        <p><strong>MUK CU Uganda Ltd</strong><br>Plot 2312 &amp; 67 Bweyogerere, Kazinga<br>Kira, Wakiso District, Uganda</p>
         <p><a href="mailto:info@pdnafrica.org">info@pdnafrica.org</a></p>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2026</span> Pastors Discipleship Network. A 501(c)(3) public charity &middot; Tax ID 27-2014552.</span>
+      <span>&copy; <span data-year>2026</span> Makerere University Christian Union. A 501(c)(3) public charity &middot; Tax ID 27-2014552.</span>
       <span>Integrity &middot; Christ-centeredness &middot; Institutional Excellence &middot; Service</span>
     </div>
   </div>

@@ -1,5 +1,5 @@
 /**
- * Static server for the PDN clone.
+ * Static server for the MUK CU clone.
  * Binds 0.0.0.0 so the Arena live preview can reach it, and accepts any Host
  * header (the preview is proxied under https://{port}-{sandbox}.e2b.app).
  */
@@ -70,5 +70,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`PDN clone running at http://0.0.0.0:${PORT}`);
+  console.log(`MUK CU clone running at http://0.0.0.0:${PORT}`);
 });

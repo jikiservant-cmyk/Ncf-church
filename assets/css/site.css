@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PDN — Pastors Discipleship Network
+   MUK CU — Makerere University Christian Union
    Design system recreated from pdnafrica.org's compiled Squarespace stylesheet.
    Original type ramp (Futura PT / Proxima Nova) preserved exactly; self-hosted
    metric-compatible fallbacks (Jost / Source Sans 3) are used so the clone
@@ -31,7 +31,7 @@
   --line:#e4e4e4;
   --paper:#ffffff;
   --paper-alt:#f6f6f6;
-  --accent:#7ba05b;          /* PDN logo green */
+  --accent:#7ba05b;          /* MUK CU logo green */
   --overlay:rgba(0,0,0,.38);
 
   --maxw:1020px;
@@ -85,7 +85,7 @@ h3,.h3{font-family:var(--font-display);text-transform:uppercase;font-weight:700;
 @keyframes slideDown{from{transform:translateY(-100%)}to{transform:translateY(0)}}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;flex-shrink:0}
 .brand__mark{width:44px;height:53px;object-fit:contain}
-.brand__text{font-family:var(--font-display);text-transform:uppercase;font-weight:700;letter-spacing:3px;font-size:17px;line-height:1.25;max-width:190px}
+.brand__text{font-family:var(--font-display);text-transform:uppercase;font-weight:700;letter-spacing:3px;font-size:17px;line-height:1.25;max-width:215px}
 
 /* ---------- Desktop nav ---------- */
 .nav{display:flex;align-items:center;gap:26px}
@@ -129,7 +129,7 @@ body.nav-open{overflow:hidden}
 .banner__media{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;will-change:transform}
 .banner::after{content:'';position:absolute;inset:0;background:var(--overlay)}
 .banner__inner{position:relative;z-index:2;padding:150px 40px 130px;max-width:1080px;margin:0 auto;width:100%}
-.banner__title{font-family:var(--font-display);font-weight:700;letter-spacing:-1px;font-size:72px;line-height:1em;margin:0 0 22px;text-shadow:0 2px 26px rgba(0,0,0,.32)}
+.banner__title{font-family:var(--font-display);font-weight:700;letter-spacing:-1px;font-size:72px;line-height:1em;margin:0 0 22px;text-shadow:0 2px 26px rgba(0,0,0,.32);text-wrap:balance}
 .banner__sub{font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.25;margin:0 0 18px;letter-spacing:.5px}
 .banner__desc{font-family:var(--font-body);text-transform:uppercase;font-weight:300;letter-spacing:.015em;font-size:22px;line-height:1.6em;max-width:900px;margin:0 auto;color:rgba(255,255,255,.95)}
 .banner__desc em{font-style:italic;text-transform:uppercase}
@@ -295,7 +295,7 @@ body.nav-open{overflow:hidden}
   .banner{min-height:88vh}
   .banner--short{min-height:64vh}
   .banner__title{font-size:34px}
-  .brand__text{font-size:13px;letter-spacing:2px;max-width:140px}
+  .brand__text{font-size:13px;letter-spacing:2px;max-width:160px}
   .brand__mark{width:34px;height:41px}
   .gallery,.gallery--2,.gallery--4{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}

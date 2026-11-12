@@ -1,1 +1,1 @@
-{"name": "pdn-church-clone", "version": "1.0.0", "private": true, "description": "Static clone of pdnafrica.org — Pastors Discipleship Network", "scripts": {"start": "node server.js", "build": "python3 tools/build.py"}, "license": "UNLICENSED"}
+{"name": "muk-cu-website", "version": "1.0.0", "private": true, "description": "Makerere University Christian Union (MUK CU) website — static site built on a pdnafrica.org clone", "scripts": {"start": "node server.js", "build": "python3 tools/build.py"}, "license": "UNLICENSED"}

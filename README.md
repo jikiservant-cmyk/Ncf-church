@@ -1,7 +1,13 @@
-# PDN — Pastors Discipleship Network (site clone)
+# MUK CU — Makerere University Christian Union
 
-A faithful, self-contained static clone of **[pdnafrica.org](https://www.pdnafrica.org)** —
-rebuilt from the live site's own content, imagery and compiled stylesheet.
+Site for **Makerere University Christian Union (MUK CU)**, built on a faithful,
+self-contained static clone of **[pdnafrica.org](https://www.pdnafrica.org)** —
+rebuilt from that site's content, imagery and compiled stylesheet, then rebranded.
+
+> **Rebrand status:** the organisation name is changed throughout (page titles,
+> header wordmark, hero, nav, body copy, footer). Still carrying PDN's details:
+> the logo artwork, contact emails, social links, postal addresses, tax ID and the
+> outbound donate link. Replace those before publishing — see *Notes & caveats*.
 
 No Squarespace runtime, no CDN dependencies, no build step required to view it.
 
