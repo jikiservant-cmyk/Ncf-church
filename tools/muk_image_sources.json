@@ -1,0 +1,82 @@
+{
+  "muk-congregation.jpg": {
+    "source_file": "news-mak-ac-ug-christian-union-prayer-br-2.jpg",
+    "size": [
+      1600,
+      1067
+    ],
+    "caption": "Congregation at worship, St Francis Chapel Gardens"
+  },
+  "muk-choir.jpg": {
+    "source_file": "news-mak-ac-ug-christian-union-prayer-br-1.jpg",
+    "size": [
+      1600,
+      1067
+    ],
+    "caption": "Staff and students leading praise and worship"
+  },
+  "muk-speaker.jpg": {
+    "source_file": "news-mak-ac-ug-christian-union-prayer-br-3.jpg",
+    "size": [
+      1600,
+      1067
+    ],
+    "caption": "Rev. Canon Dr. John Senyonyi delivering the message"
+  },
+  "muk-remarks.jpg": {
+    "source_file": "news-mak-ac-ug-christian-union-prayer-br-4.jpg",
+    "size": [
+      1600,
+      1067
+    ],
+    "caption": "Rev. Canon Dr. Lydia Nsaale Kitayimbwa making remarks"
+  },
+  "muk-chapel-group.jpg": {
+    "source_file": "makerere-university-christian-union-mukc-5.jpg",
+    "size": [
+      2400,
+      1600
+    ],
+    "caption": "Gathered outside St Francis Chapel, Makerere University"
+  },
+  "muk-freedom-square.jpg": {
+    "source_file": "makerere-university-christian-union-lunc-2.jpg",
+    "size": [
+      1300,
+      781
+    ],
+    "caption": "Freedom Square and the Main Building, Makerere University"
+  },
+  "muk-freshers.jpg": {
+    "source_file": "makerere-university-christian-union-lunc-4.jpg",
+    "size": [
+      1600,
+      1067
+    ],
+    "caption": "Freshers' Orientation at Freedom Square"
+  },
+  "muk-listening.jpg": {
+    "source_file": "makerere-university-christian-union-lunc-1.jpg",
+    "size": [
+      1024,
+      683
+    ],
+    "caption": "Students and staff listening to the word"
+  },
+  "muk-benediction.jpg": {
+    "source_file": "makerere-university-christian-union-lunc-3.jpg",
+    "size": [
+      1300,
+      780
+    ],
+    "caption": "The Chaplain delivering the benediction, St Francis Students' Centre"
+  },
+  "muk-chapel-crest.jpg": {
+    "source_file": "makerere-university-christian-union-mukc-2.jpg",
+    "size": [
+      509,
+      679
+    ],
+    "caption": "St Francis Chapel \u2014 home of Makerere University Christian Union"
+  }
+}

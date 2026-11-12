@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>/pastoral-training</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/youthpastorandemergingleaders</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/impacting-women</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/interim-pastoral-ministry</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/accredited-degree-program-partnerships</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/cornerstone-university</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/pos-impact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/lives-impacted</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/mentorship-profiles</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/run-across-uganda</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/ways-to-donate</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/history</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/fellowships</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/discipleship</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/evangelism</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/worship</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/prayer</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/lunch-hour</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/night-of-redemption</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/events</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/leadership</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/affiliations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/give</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/news</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/blog</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
