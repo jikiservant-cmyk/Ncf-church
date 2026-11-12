@@ -1,171 +1,322 @@
-"""Page content transcribed from pdnafrica.org (text preserved verbatim)."""
+"""Content for Makerere University Christian Union (MUK CU).
 
-MISSION = ("To bring training to untrained pastors to deepen the church and advance "
-           "the gospel through healthy churches.")
-VISION = ("We see the church in Africa, TRAINED, ROOTED, and EQUIPPED to bring the "
-          "TRUE gospel to her nations and the world.")
-VALUES = "Integrity, Christ-centeredness, Institutional Excellence, and Service."
+Facts sourced from public records — see README 'Content sources'.
+Founding history: Uganda Jubilee Network (2012 jubilee notice).
+Vision/mission wording: MUK CU's own channel description and public page.
+Meeting rhythm: announced by the MC at MUK CU Lunch Hour, 29 Oct 2024.
+"""
+
+# ---------------------------------------------------------------- IDENTITY
+NAME = "Makerere University Christian Union"
+SHORT = "MUK CU"
+TAGLINE = "Preaching Christ, ministering God&rsquo;s love on campus and beyond."
+
+MISSION = ("Preaching Christ and ministering God&rsquo;s love on campus and beyond.")
+
+VISION = ("A body that brings together all believers in Makerere through its Hall, "
+          "College and Hostel Fellowships &mdash; preaching Christ and ministering "
+          "God&rsquo;s love on campus and beyond.")
+
+BELIEF = ("God&rsquo;s saving grace is abundant to reach every soul on campus.")
+
+VALUES = ["Christ-centredness", "Fellowship", "Integrity", "Service", "Excellence"]
 
 ABOUT_INTRO = (
-    "<strong>MUK CU</strong> is a registered nonprofit 501c(3) organization established in 2008 to "
-    "train and equip pastors and their wives with critical ministry and life skills to help them "
-    "lead and teach their congregations while fostering personal development."
-)
+    "Makerere University Christian Union is an interdenominational fellowship of "
+    "Christian students at Makerere University, Kampala. We exist to preach Christ and "
+    "to minister God&rsquo;s love on campus and beyond &mdash; gathering believers from "
+    "every hall of residence, college and hostel into one family of faith.")
 
-REALITY = [
-    "70% of pastors in Sub-Saharan Africa have no theological training",
-    "70% of the 70% will never attend Bible school in their lifetime",
-    ("Most pastors in Sub-Saharan Africa will blend a message from television with some elements "
-     "of African culture and deliver it on Sunday as a message from God. Consequently, syncretism, "
-     "shallowness, and cultural Christianity are on the rise in Africa. The church continues to "
-     "struggle, and we must join God in deepening the African church."),
+ABOUT_MORE = [
+    "The Union is not a church and does not replace one. Members are encouraged to stay "
+    "rooted in their own congregations while finding, on campus, a community that studies "
+    "the Scriptures, prays together and carries the gospel to fellow students.",
+    "Life in the Union moves through the fellowships. A student belongs first to the "
+    "fellowship of their hall, college or hostel, where they are known by name; the wider "
+    "Union gathers for Lunch Hour, the prayer altar, missions and the big campus events "
+    "that mark the academic year.",
+    "MUK CU is affiliated to the Fellowship of Christian Unions (FOCUS-Uganda), the body "
+    "that links Christian Unions across Ugandan universities and institutions.",
 ]
 
-REALITY_EFFECTS = [
-    "A great inhibition in the proclamation task.",
-    "Making of disciples is sporadic and hindered since pastors are untrained.",
-    "Increasing idolatry, widespread false teaching, unchallenged false teachers.",
-    "Abuse of the poor and vulnerable.",
-    "Politicization of faith.",
+# ---------------------------------------------------------------- HISTORY
+FOUNDED = "1962"
+
+HISTORY = [
+    "Makerere University Christian Union was started in 1962 by students including "
+    "Daniel Kyanda and Michael Ssenyimba, who later became Bishop Ssenyimba and "
+    "Vice-Chancellor of Ndejje University.",
+    "What began as a student fellowship on the Makerere hill sparked the Christian Union "
+    "movement in Uganda. Christian Unions were formed in other universities and "
+    "institutions across the country, and in 1972 those fellowships came together as the "
+    "Fellowship of Christian Unions (FOCUS-Uganda).",
+    "The Union marked fifty years in November 2012 with a jubilee celebration at Freedom "
+    "Square on the main campus, gathering alumni and students to give thanks for the "
+    "lives changed through the CU. Sixty years were celebrated in November 2022.",
+    "More than six decades on, the calling has not changed: to reach every soul on "
+    "campus with the saving grace of God.",
 ]
 
-REALITY_CAUSES = [
-    "Lack of theological training for pastors and frontline ministers.",
-    "Extreme poverty among pastors.",
-    "Lack of &ldquo;growth groups&rdquo; (discipleship hubs) for pastors in Africa.",
-    "Lack of ministry resources.",
-    "Lack of basic ministry skills for pastors and their spouses",
+MILESTONES = [
+    ("1962", "The Christian Union is founded at Makerere by Daniel Kyanda, "
+             "Michael Ssenyimba and fellow students."),
+    ("1972", "The movement begun on the hill leads to the formation of "
+             "FOCUS-Uganda, linking Christian Unions nationwide."),
+    ("2012", "The Union celebrates its Golden Jubilee &mdash; 50 years &mdash; "
+             "at Freedom Square with alumni and students."),
+    ("2022", "Sixty years of the Union&rsquo;s witness on campus are marked "
+             "with a thanksgiving celebration."),
+    ("Today", "Hall, College and Hostel Fellowships carry the work forward "
+              "across every part of the University."),
 ]
 
-FUTURE_GOALS = [
-    "Train 20,000 more pastors and 10,500 pastors&rsquo; wives in all our programs.",
-    "Develop additional curricula, materials, and manuals that cover our programs more thoroughly.",
-    "Build the capacity of our staff to fully understand and carry out ministry to pastors in the African context.",
+# ---------------------------------------------------------------- HERO SLIDES
+# (image, title, subtitle, description, button label, button href)
+SLIDES = [
+    ("muk-chapel-group.jpg", "Makerere University<br>Christian Union", "",
+     "Preaching Christ and ministering God&rsquo;s love on campus and beyond.",
+     "Join A Fellowship", "/fellowships.html"),
+    ("muk-congregation.jpg", "One Family,<br>Many Fellowships", "",
+     "Bringing together all believers in Makerere through Hall, College "
+     "and Hostel Fellowships.",
+     "What We Believe", "/about.html"),
+    ("muk-freedom-square.jpg", "On The Hill<br>Since 1962", "",
+     "The fellowship that sparked the Christian Union movement in Uganda.",
+     "Our Story", "/history.html"),
+    ("muk-choir.jpg", "Come As<br>You Are", "",
+     "Lunch Hour, the prayer altar, missions and worship &mdash; there is a "
+     "place for you here.",
+     "Get Involved", "/lunch-hour.html"),
 ]
 
-PROGRESS_1 = (
-    "During the past twelve years, we have successfully trained and equipped over 15,000 pastors "
-    "in East Africa &ndash; providing quality theological education by gifted facilitators, securing "
-    "and delivering high-quality ministry resources to African church leaders, effectively following "
-    "up with pastors after training, and building networks for pastors across East Africa to "
-    "facilitate accountability and fellowship."
-)
-PROGRESS_2 = (
-    "In our special business training program, we have provided more than 1,600 pastors and their "
-    "wives with training and resources in small business development, financial accountability, and "
-    "entrepreneurship. The goal of this special training is to alleviate the extreme poverty that "
-    "is common among African pastors."
-)
-PROGRESS_RESULTS = [
-    "We have received overwhelming feedback from congregation members about positive changes in their pastor&rsquo;s performance.",
-    "Pastors have shared their stories of transformation.",
-    "Communities have been reached more effectively with the truth of the Gospel.",
-    "Record numbers of pastors and their wives have registered for our programs demonstrating a growing hunger for new knowledge and skills.",
+# ---------------------------------------------------------------- FELLOWSHIPS
+FELLOWSHIP_INTRO = (
+    "Every member of the Union belongs to a fellowship. These are the small gatherings "
+    "where students are known by name, study the Bible, pray and carry one another "
+    "through the academic year.")
+
+FELLOWSHIP_TYPES = [
+    ("Hall Fellowships",
+     ["Gatherings within the University halls of residence &mdash; among them Nkrumah, "
+      "Nsibirwa, Livingstone, University Hall, Mitchell, Africa, Mary Stuart and the "
+      "CCE Complex.",
+      "Some halls fellowship together; Afrostone, for example, brings together students "
+      "of Africa and Livingstone halls.",
+      "Hall fellowships meet through the week for Bible study, prayer and worship, and "
+      "are the first place a resident student is welcomed."]),
+    ("College Fellowships",
+     ["Fellowships organised around the colleges and schools of the University, so that "
+      "students meet with those who share their timetable, their discipline and their "
+      "pressures.",
+      "College fellowships reach students who do not reside on campus and often meet "
+      "between lectures."]),
+    ("Hostel Fellowships",
+     ["The greater number of Makerere students live in hostels around Kikoni, Kikumi "
+      "Kikumi, Wandegeya and the surrounding neighbourhoods.",
+      "Hostel fellowships take the Union to those students, meeting in and around the "
+      "hostels so that distance from campus is no barrier to belonging."]),
 ]
 
-RICHMOND = [
-    "Dr. Richmond Wandera grew up in extreme poverty in the Naguru slum near Kampala, Uganda. His childhood was a painful and challenging one, marked by extreme poverty, illness, loss and hopelessness.",
-    "When Richmond's father was murdered, he was left to help care for his six siblings. It was not until he entered the Compassion-assisted child development center at his local church when he was 8, that his life and his family changed dramatically.",
-    "He began attending Compassion&rsquo;s child development center at a local church, the healthcare, education, and love he received changed his life dramatically. As hope grew, Richmond quickly began excelling in school. After graduating, he was chosen for Compassion&rsquo;s Leadership Development Program, which gave him the opportunity to earn a university degree. This ultimately shaped the trajectory of his entire life, building in him a heart for inciting transformational change in individuals, communities and nations.",
-    "With his master&rsquo;s degree in Spiritual Formation from Moody Graduate School and Theological Seminary in Chicago, Richmond is unwaveringly committed to theological training for pastors; discipleship and spiritual formation for all believers. Richmond is also a voice from the frontline fighting against poverty in developing countries. He holds strongly that Church must play a crucial role in breaking the bonds of injustice and poverty. Richmond holds a Ph.D. in Philosophy of Leadership from Lancaster Bible College and Capital Seminary in Lancaster, PA.",
-    "He is currently the senior pastor of New Life Baptist Church in Kampala, and the Founder and Director of Makerere University Christian Union, a nonprofit that serves, equips and trains thousands of pastors across East Africa.",
-    "Richmond resides in Kampala, Uganda with his wife, Rosette and their two children - Precious and Renee. The church he pastors is the very same one that hosted the Compassion program that altered his story forever.",
+# ---------------------------------------------------------------- MINISTRY AREAS
+DISCIPLESHIP = [
+    "Discipleship is the slow work of helping a student follow Jesus &mdash; not only for "
+    "a semester, but for life after campus.",
+    "It happens through Bible study in the fellowships, through teaching at Lunch Hour, "
+    "and through older believers walking personally with younger ones.",
+    "New believers are followed up one by one, grounded in the Scriptures and helped to "
+    "pray, so that faith taken up in the first year survives finals, holidays and the "
+    "years that follow graduation.",
 ]
 
-HIGHLIGHTS = [
-    ("1,868", "pastors trained."),
-    ("1,800,000", "believers now worshipping under MUK CU&rsquo;s 15,000 trained pastors."),
-    ("5.53%", "overall growth rate compared to 2021."),
-    ("11.5 acres", "of property in Kampala city acquired for the construction of Cornerstone University."),
-    ("244", "Pastors in emergency crises rescued and cared for."),
-    ("695", "pastors&rsquo; spouses trained and equipped in MUK CU&rsquo;s 10-week empowerment course."),
-    ("21", "new MUK CU faculty (Trainers of Trainers) educated by Lancaster Bible College, and Capital Seminary."),
-    ("11,700", "hours spent training pastors."),
-    ("14,425", "Study bibles, bible resources, pastors&rsquo; handbooks, and source books distributed across East Africa."),
+EVANGELISM = [
+    "The Union exists for the student who has not yet heard. Members share Christ "
+    "personally with coursemates, roommates and friends across the University.",
+    "Open-air preaching, personal witness, fresher&rsquo;s outreach and the large campus "
+    "gatherings all serve the same end &mdash; that every soul on campus encounters the "
+    "saving grace of God.",
+    "Missions carry the work beyond the hill. During recess and vacation terms students "
+    "travel out in teams to churches, schools and communities, preaching, serving and "
+    "learning from the church outside Kampala.",
 ]
 
-PARTNERS = [
-    ("Ignite Mission Convention IMC", None, [
-        "MUK CU entered a partnership with Ignite Mission Convention (IMC) as part of our ongoing efforts to engage and empower churches in Uganda for global mission, MUK CU and IMC launched and annual four-day Africa to the World Mission&rsquo;s Convention targeting 500 participants drawn from pastors, church leaders, Christian professionals and Christian youth/students&rsquo; leaders who are passionate about mission.",
-        "The vision behind the Mission Convention is to ignite the passion of participants to the place of appreciating <strong>the need for the Church in Uganda to become a sending Church for global mission and intern be involved to mobilize their church towards the same goal.</strong>",
-        "Key partners in organizing this Annual Mission Convention are World Venture, Africa Inland Mission (AIM), Pastors&rsquo; Discipleship Network, and Simply Mobilizing Uganda.",
-    ]),
-    ("Reforma, South Africa", None, [
-        "MUK CU recently partnered with ReForma.",
-        "Re-Forma is responding to the crisis of insufficiently trained church leadership. Founded on outcome and impact-based assessment, Re-Forma provides recognized benchmarks for informal and non-formal biblically based ministry through a program which provides guidelines for evaluating the thousands of existing training programs for ministry competency and guidelines for start-up organizations wanting to train thousands of church leaders annually.",
-    ]),
-    ("Living on the Edge (Chip Ingram)", "https://livingontheedge.org/", [
-        "MUK CU recently partnered with Pastor Chip Ingram. His ministry, Living on the Edge, has a vision to be a catalytic movement of Christians living out their faith in ways that transform families, churches, and communities for the common good and the glory of God.",
-        "Living on the Edge provides Biblical teaching and discipleship resources that challenge and equip spiritually hungry Christians all over the world to become mature disciples of Jesus.",
-    ]),
-    ("New Thing", "https://newthing.org/", [
-        "MUK CU also partnered with New Thing to train pastors in church planting and church growth. New Thing provides frameworks to catalyze movements. It&rsquo;s a church planting movement that works to awaken the church to the importance of church planting and healthy church growth.",
-    ]),
-    ("Dr. Val from Colide Consultancy", None, [
-        "MUK CU Recently entered a relationship with Dr. Val who is a veterinary doctor working in one of the most remote and most hostile regions of Uganda called Karamoja. She has seen many come to Christ but had no pastors to care for those who were coming to Christ. MUK CU has been pleased to come alongside her to supply pastoral support to her work.",
-    ]),
-    ("Church Transformation Network", None, [
-        "Church Transformation Network (CTN) and Makerere University Christian Union (MUK CU) entered in a partnership in 2022 to equip pastors and lay leaders in discipleship. This partnership has trained 500 facilitators, who individually, currently lead a discipleship hub that meets weekly with 10 members. Thereby impacting 5,000 Church leaders at community level.",
-    ]),
+WORSHIP = [
+    "Praise and worship sit at the centre of the Union&rsquo;s gathering life. The choir "
+    "and praise team &mdash; drawn from students across the colleges &mdash; lead the "
+    "fellowship in singing, and the wider Union gathers to worship at Lunch Hour and at "
+    "the major campus events.",
+    "Music, drama, dance and spoken word are all used to carry the gospel, and students "
+    "are trained and discipled as they serve, not merely rostered.",
 ]
 
-BOARD = [
-    ("john-zeswitz_headshot.jpg", "John Zeswitz", "Interim Chair", [
-        "With a passion for people and leadership, John brings 27 years of executive level leadership to his role at North Group Consultants. John served as Executive Vice President at Lancaster Bible College. Prior to that, John spent 7 years as Executive Director of Ministries at LCBC. Throughout his career, John has seen the positive ripple effect of good leadership, noting that as leaders get better, it makes their organizations and the lives of those in them better.",
-        "John holds a Bachelor of Science degree in Communications from Millersville University and an honorary Doctor of Divinity from New Hope College. John is an active member of a variety of organizations on the local, regional and national level.",
-    ]),
-    ("emilyhartman_headshot.jpg", "Emily Hartman", "Secretary", [
-        "Emily Hartman has had a heart for engaging with the nations from a very young age. She has served short term in 8 different countries in areas of children&rsquo;s ministry, teaching, media development, writing and administration. Her focus is to invest in others by discipling them and doing life together. Most recently, she served as Personnel Director for Mandate, an organization placing professionals in countries in Asia where traditional forms of missions cannot operate.",
-        "Emily recently moved to Atlanta but previously lived in Chicago and loved the opportunities available to her in such a multicultural city. Her educational background includes a BA in Anthropology from University of Texas at San Antonio and a MA in Biblical Studies from Moody Theological Seminary in Chicago. Her sweet spot is using her administrative skills to help others, and it has been her joy to serve MUK CU in this capacity since it&rsquo;s inception.",
-    ]),
-    ("terrytimm_headshot.jpg", "Dr. Terry Timm", "Past Chair", [
-        "Terry Timm is a pastor/teacher, musician, and coach with a deep desire to help people pursue God sized dreams for their lives. Since 1985 Terry has served in a variety of local church settings and in 2003 launched Christ Community Church of the South Hills, a missional community of faith located in the south hills of Pittsburgh.",
-        "He is the author of the book, &ldquo;A Movable Feast: Worship for the Other Six Days&rdquo;. Terry serves as a Regional Coordinator for Made to Flourish Pittsburgh, coaches pastors and leaders through his work with the Pittsburgh Leadership Foundation and teaches East African pastors as an adjunct faculty for Lancaster Bible College and Capital Seminary.",
-        "Terry and Patty have been married for 34 years and together have raised four children and have two grandsons, Christopher and Roman.",
-    ]),
-    ("blank-robert-uganda-14.jpg", "Rob Blanks", "Ex Officio Member", [
-        "Rob Blanks grew up in Colorado and attended the Colorado School of Mines where he earned a Bachelor of Science in Engineering. Rob went on to earn a Master of Divinity Degree from the Southern Baptist Theological Seminary in Louisville, KY.",
-        "In 1999 Rob married his wife Heather and they have 4 kids. After finishing seminary Rob pastored a church in Colorado. After pastoring, Rob and Heather, along with their kids were missionaries living and working in Mozambique, Africa for 6 years. In Mozambique, they worked and taught in Portuguese in the areas of discipleship and theological education. In the fall of 2015 they relocated to the US.",
-        "Rob works for Lancaster Bible College (LBC) as the LBC-MUK CU Partnership Liaison and Assistant Professor. In this capacity, in partnership with MUK CU, he leads LBC&rsquo;s online Master of Arts in Contextualized Pastoral Ministry degree offered in Africa.",
-    ]),
-    ("rob-teague_headshot.jpg", "Robert W. Teague", "Board Member", [
-        "Rob completed college in 1999 and soon after began his career in the Financial Services Industry as a Financial Advisor. In 2008, Rob was appointed as the first Executive Director of Eden Bridge Foundation, a faith-based non-profit in Lancaster, PA, where he continues to serve.",
-        "Rob&rsquo;s current role as Executive Director of Eden Bridge Foundation involves assisting donors with specialized estate planning through various charitable planning techniques, including charitable trusts, in kind gifts and donor advised funds. Currently, the Foundation directs nearly $40 million in assets, all earmarked for ministry!",
-        "Rob serves as a Partner and Financial Advisor with Capital View Wealth Management and also serves as the Treasurer of the Board for Jessica and Friends Community in York, PA. Rob is married to his high-school sweetheart, Kirsten. Together, they have three children.",
-    ]),
-    ("img_3784.jpg", "Dr. Richmond Wandera", "President and Founder", [
-        "Dr. Richmond Wandera grew up in extreme poverty in the Naguru slum near Kampala, Uganda. His childhood was a painful and challenging one, marked by extreme poverty, illness, loss and hopelessness.",
-        "When Richmond's father was murdered, he was left to help care for his six siblings. It was not until he entered the Compassion-assisted child development center at his local church when he was 8, that his life and his family changed dramatically.",
-        "He is currently the senior pastor of New Life Baptist Church in Kampala, and the Founder and Director of Makerere University Christian Union, a nonprofit that serves, equips and trains thousands of pastors across East Africa. Richmond resides in Kampala, Uganda with his wife, Rosette and their child.",
-    ]),
+PRAYER = [
+    "The prayer altar is where the Union draws its strength. Members gather in the "
+    "evenings to intercede for the University, for one another, for the nation and for "
+    "the lost on campus.",
+    "Prayer is not treated as a programme among programmes. It undergirds the "
+    "fellowships, the outreach and every large gathering the Union holds.",
 ]
 
-COMPETENCIES = [
-    ("Pastor-Theologian", "Equipped with foundational knowledge and tools to discover truth"),
-    ("Pastor-Preacher", "Equipped with skills to communicate biblical truth effectively."),
-    ("Pastor-Leader", "Equipped with biblical leadership skills."),
-    ("Pastor-Disciple", "Equipped with skills to help people grow in their faith."),
-    ("Pastor-Counsellor", "Equipped with counselling skills."),
-    ("Pastor-Apologist", "Equipped to defend the faith"),
-    ("Pastor-church planter", "Equipped to multiply"),
-    ("Pastor-Entrepreneur", "Equipped to be financially independent"),
+# ---------------------------------------------------------------- WEEKLY RHYTHM
+# Announced at MUK CU Lunch Hour, 29 October 2024.
+WEEKLY = [
+    ("Lunch Hour", "Tuesdays &amp; Fridays", "Midday",
+     "The Union gathers in the middle of the day for worship, testimonies and the "
+     "teaching of the word."),
+    ("Prayer Altar", "Tuesdays &amp; Thursdays", "6:00 &ndash; 8:00 PM",
+     "Evening intercession &mdash; in the words of the Union, where we get our strength "
+     "and our wisdom."),
+    ("Fellowship Meetings", "Through the week", "Hall, College &amp; Hostel",
+     "Bible study and prayer in the small gatherings where every member belongs."),
 ]
 
-MENTEES = [
-    ("image-asset-1459829262217.jpg", "Tony Rovis Wafula",
-     "Pastor of Springs of Life Baptist Church with a congregation of 30 members.",
-     "We are committed to building &amp; developing an intimate relationship with God and the community.",
-     "I am married with one child. I am currently pursuing a masters degree in Business Administration and have a degree in Education. We have just started the ministry and with the growth we are experiencing, this mentor relationship opportunity comes at the right time &ndash; Praise God!"),
-    ("image-asset-1459829607109.jpg", "Livingston Mugabbi Kayumba",
-     "Senior Pastor of Glory Revival Church that has a congregation of 250 members.",
-     "To reach out to the communities and nations by sharing the love of Jesus and giving them hope through the Gospel and making Disciples.",
-     "I am married to 1 wife, Joyce, and have 4 children Rebecca, Shibah, Comfort and Joel. I have a diploma in theology and hope this mentor relationship can help me grow in faith, ministry and equip me with skill to mentor others who don&rsquo;t have such an opportunity due to language barrier and poverty. God bless you."),
-    ("image-asset-1459831646440.jpg", "George Otaka",
-     "The senior pastor of Truth Evangelistic Fountain Church with a congregation of 145 members.",
-     "To set people free by preaching the Word of Truth. (John 8:32)",
-     "I am a water engineer, hydro geologist and a pastor without theological training. I am married with 4 children. I love reading and thank MUK CU for the plans to put us for us as pastors a resource center and this mentorship relationship opportunity. I hope to grow and serve better through this mentorship relationship."),
-    ("image-asset-1459831494104.jpg", "Sam Mayambala Ssubyakusaaga",
-     "Senior Pastor of Healing Power Center Church with 104 members.",
-     "To bring people to Christ and teaching them the Word of God such that they are healed spiritually and physically.",
-     "I have been married for 12 years and been in ministry for 15 years. I have no training, but by God&rsquo;s grace I have led these people this far. This mentor relationship will not only help me, but the whole church. Thank you, MUK CU, for training me, giving me a Bible and now giving me this opportunity. God bless you."),
+# ---------------------------------------------------------------- EVENTS
+NIGHT_OF_REDEMPTION = [
+    "The Makerere Night of Redemption is the Union&rsquo;s great open gathering, held at "
+    "the University Sports Ground and open to the whole University and the city.",
+    "In March 2025 the chief celebrant was Pastor Robert Kayanja. Ahead of the event he "
+    "was hosted at the University by the Vice Chancellor, and discussion turned to "
+    "collaboration between the University and Robert Kayanja Ministries on the "
+    "improvement of student welfare. The University reported the night a big success.",
+    "It is the night the Union prays toward all year &mdash; a wide door onto campus for "
+    "the gospel, with worship, preaching and an open call to students who have never "
+    "before walked into a fellowship.",
+]
+
+EVENTS = [
+    ("Night of Redemption", "University Sports Ground",
+     "The Union&rsquo;s flagship open-air night of worship and preaching, drawing "
+     "students from across the University and guests from the city."),
+    ("Freshers&rsquo; Outreach", "Start of academic year",
+     "Welcoming new students to the hill and connecting them to the fellowship of their "
+     "hall, college or hostel."),
+    ("Missions &amp; Recess Teams", "Vacation terms",
+     "Students travel out in teams to churches, schools and communities beyond Kampala."),
+    ("Jubilee &amp; Alumni Gatherings", "Anniversary years",
+     "Alumni return to Freedom Square to give thanks, reconnect and encourage the "
+     "current generation."),
+]
+
+# ---------------------------------------------------------------- LEADERSHIP
+LEADERSHIP_INTRO = (
+    "The Union is led by an elected student executive, supported by fellowship "
+    "coordinators and by the University chaplaincy. Office bearers serve for a defined "
+    "term and are accountable to the membership.")
+
+DOCKETS = [
+    ("Chairperson", "Carries the vision of the Union, chairs the executive and "
+     "represents MUK CU within the University and to FOCUS-Uganda."),
+    ("Vice Chairperson", "Deputises for the Chairperson and oversees the coordination "
+     "of the fellowships."),
+    ("General Secretary", "Keeps the records, correspondence and calendar of the "
+     "Union, and serves the executive and membership."),
+    ("Treasurer", "Stewards the Union&rsquo;s giving and reporting, keeping the "
+     "fellowship&rsquo;s finances in order and transparent."),
+    ("Discipleship &amp; Bible Study", "Oversees follow-up of new believers, Bible "
+     "study material and the training of fellowship leaders."),
+    ("Evangelism &amp; Missions", "Coordinates campus outreach and the recess mission "
+     "teams that travel beyond Kampala."),
+    ("Praise &amp; Worship", "Leads the choir and praise team, and carries the worship "
+     "life of the Union&rsquo;s gatherings."),
+    ("Prayer", "Coordinates the prayer altar and intercession for the University."),
+    ("Publicity &amp; Media", "Carries the Union&rsquo;s announcements, recordings and "
+     "publications &mdash; the Union has long published its own newsletter."),
+    ("Welfare &amp; Hospitality", "Cares for members&rsquo; practical needs and "
+     "welcomes visitors and guest ministers."),
+]
+
+CHAPLAINCY = (
+    "The Union works alongside the University chaplaincy at St Francis Chapel, which "
+    "serves students and staff of all denominations. Rev. Canon Onesimus Asiimwe has "
+    "served as Chaplain of St Francis Chapel.")
+
+# ---------------------------------------------------------------- AFFILIATIONS
+AFFILIATIONS = [
+    ("FOCUS-Uganda", "https://focusuganda.org",
+     ["The Fellowship of Christian Unions links Christian Unions in universities and "
+      "institutions across Uganda. It was formed in 1972 out of the movement that began "
+      "at Makerere.",
+      "MUK CU is a fellowship under FOCUS, sharing in its training, missions and "
+      "national gatherings."]),
+    ("Makerere University Chaplaincy", "https://www.mak.ac.ug",
+     ["St Francis Chapel serves the spiritual life of the University community. The "
+      "Union works alongside the chaplaincy in ministering to students."]),
+    ("Alumni of the Union", "",
+     ["Six decades of graduates carry the Union&rsquo;s witness into law, medicine, "
+      "engineering, education, business and public service.",
+      "Alumni return for jubilee gatherings, mentor current students and support the "
+      "work financially."]),
+]
+
+# ---------------------------------------------------------------- GIVING
+GIVING_INTRO = (
+    "The work of the Union is carried by the freewill giving of its members, alumni and "
+    "friends. Gifts support the fellowships, discipleship materials, missions teams and "
+    "the large campus gatherings.")
+
+GIVING_USES = [
+    "Bibles, study guides and discipleship materials for new believers",
+    "Recess and vacation mission teams travelling beyond Kampala",
+    "Sound, staging and logistics for Lunch Hour and the Night of Redemption",
+    "Training and pastoral care of fellowship leaders",
+    "Welfare support for members in genuine need",
+]
+
+# ---------------------------------------------------------------- CONTACT
+PHONE = "+256 777 345125"
+LOCATION = "St Francis Chapel, Makerere University, Kampala, Uganda"
+WEBSITE = "www.mukchristianunion.org"
+FACEBOOK = ("https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/"
+            "100064865400507/")
+YOUTUBE = "https://www.youtube.com/@MAKEREREUNIVERSITYCHRISTIANUNI"
+
+CONTACT_INTRO = (
+    "Whether you are a fresher finding your feet, a student looking for a fellowship, "
+    "an alumnus wanting to reconnect, or a minister visiting the hill &mdash; we would "
+    "be glad to hear from you.")
+
+VISIT = [
+    "Come to Lunch Hour on a Tuesday or Friday and introduce yourself &mdash; visitors "
+    "are welcomed at every gathering.",
+    "If you tell us your hall, college or hostel, we will connect you to the fellowship "
+    "that meets nearest to you.",
+    "The prayer altar is open to any student who wants to pray, whether or not you have "
+    "ever attended a fellowship before.",
+]
+
+# ---------------------------------------------------------------- NEWS
+POSTS = [
+    ("Night of Redemption fills the Sports Ground",
+     "March 2025", "muk-congregation.jpg",
+     ["The Makerere Night of Redemption, organised by the Makerere University Christian "
+      "Union, was reported by the University as a big success. Pastor Robert Kayanja "
+      "was the chief celebrant at the University&rsquo;s Sports Ground.",
+      "Before the event the Vice Chancellor hosted Pastor Kayanja at his office, where "
+      "they discussed opportunities for collaboration between Makerere University and "
+      "Robert Kayanja Ministries in the improvement of student welfare. He also "
+      "addressed the Top Management of the University.",
+      "For the Union the night is the harvest of a year of prayer in the fellowships "
+      "and at the altar &mdash; and an open door for students who would never walk into "
+      "a meeting on their own."]),
+    ("Sixty years on the hill",
+     "November 2022", "muk-freedom-square.jpg",
+     ["Makerere University Christian Union &mdash; a fellowship under FOCUS &mdash; "
+      "marked sixty years since its inception.",
+      "The Union was founded in 1962 by students including Daniel Kyanda and Michael "
+      "Ssenyimba. It sparked the Christian Union movement in Uganda, leading to the "
+      "formation of CUs in other universities and institutions, and ultimately to "
+      "FOCUS-Uganda in 1972.",
+      "Ten years earlier the Union had gathered alumni at Freedom Square for its Golden "
+      "Jubilee &mdash; a day of fellowship, testimony and re-union, thanking God for the "
+      "countless lives changed through the CU."]),
+    ("Why the fellowship still matters",
+     "Reflection", "muk-listening.jpg",
+     ["A university can be a lonely place. A student can sit in a lecture of three "
+      "hundred and be known by no one. The fellowship exists so that this is not the "
+      "whole story.",
+      "In the hall, college and hostel fellowships a student is known by name, prayed "
+      "for by name, and helped to hold on to faith through the pressure of the "
+      "academic year.",
+      "That is why the Union keeps its rhythm &mdash; Lunch Hour in the middle of the "
+      "day, the prayer altar in the evening, and the small gatherings through the week. "
+      "God&rsquo;s saving grace is abundant to reach every soul on campus."]),
 ]

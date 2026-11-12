@@ -9,30 +9,32 @@ SITE = "Makerere University Christian Union"
 # canonical (which would de-index your copy).
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
 
-# Navigation mirrors the source site's folder structure.
+# Site navigation.
 NAV = [
-    ("About", "/index.html", [
-        ("What We Do", "/index.html#what-we-do"),
-        ("Richmond's Story", "/index.html#richmond"),
-        ("Story Highlights", "/index.html#story"),
-        ("Brighter", "/index.html#brighter"),
-        ("Strategic Partners", "/index.html#strategic-partners"),
-        ("Board Members", "/index.html#board-members"),
-        ("Positive Impact", "/pos-impact.html"),
-        ("Lives Impacted", "/lives-impacted.html"),
-        ("Mentorship Profiles", "/mentorship-profiles.html"),
-        ("Run Across Uganda", "/run-across-uganda.html"),
+    ("About", "/about.html", [
+        ("Who We Are", "/about.html"),
+        ("Our History", "/history.html"),
+        ("Leadership", "/leadership.html"),
+        ("Affiliations", "/affiliations.html"),
     ]),
-    ("MUK CU Program", "/pastoral-training.html", [
-        ("Pastoral Training", "/pastoral-training.html"),
-        ("Youth & Emerging Leaders", "/youthpastorandemergingleaders.html"),
-        ("Impacting Women", "/impacting-women.html"),
-        ("Interim Pastoral Ministry", "/interim-pastoral-ministry.html"),
-        ("Accredited Degrees", "/accredited-degree-program-partnerships.html"),
-        ("Cornerstone University", "/cornerstone-university.html"),
+    ("Fellowships", "/fellowships.html", [
+        ("Hall Fellowships", "/fellowships.html#halls"),
+        ("College Fellowships", "/fellowships.html#colleges"),
+        ("Hostel Fellowships", "/fellowships.html#hostels"),
     ]),
-    ("Ways To Donate", "/ways-to-donate.html", []),
-    ("Blog", "/blog.html", []),
+    ("Ministry", "/discipleship.html", [
+        ("Discipleship", "/discipleship.html"),
+        ("Evangelism & Missions", "/evangelism.html"),
+        ("Praise & Worship", "/worship.html"),
+        ("Prayer Altar", "/prayer.html"),
+    ]),
+    ("Gatherings", "/lunch-hour.html", [
+        ("Lunch Hour", "/lunch-hour.html"),
+        ("Night of Redemption", "/night-of-redemption.html"),
+        ("Events", "/events.html"),
+    ]),
+    ("Give", "/give.html", []),
+    ("News", "/news.html", []),
     ("Contact", "/contact.html", []),
 ]
 
@@ -52,11 +54,11 @@ def head(title, desc, path="/index.html"):
 <meta property="og:title" content="{full}">
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/assets/img/img_8436.jpg">
+<meta property="og:image" content="/assets/img/muk-chapel-group.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#20242a">
-{canonical}<link rel="icon" type="image/png" href="/assets/img/pdn-logo.png">
-<link rel="apple-touch-icon" href="/assets/img/pdn-logo.png">
+{canonical}<link rel="icon" type="image/png" href="/assets/img/muk-mark.png">
+<link rel="apple-touch-icon" href="/assets/img/muk-mark.png">
 <link rel="preload" href="/assets/fonts/jost-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
@@ -77,7 +79,7 @@ def header(active="/index.html"):
             )
         else:
             desktop.append(f'<div class="nav__item"><a class="nav__link{cls}" href="{href}">{label}</a></div>')
-    desktop.append('<div class="nav__item"><a class="nav__link nav__cta" href="/ways-to-donate.html">Donate</a></div>')
+    desktop.append('<div class="nav__item"><a class="nav__link nav__cta" href="/give.html">Give</a></div>')
 
     mobile = []
     for label, href, kids in NAV:
@@ -89,17 +91,17 @@ def header(active="/index.html"):
             )
         else:
             mobile.append(f'<li><a href="{href}">{label}</a></li>')
-    mobile.append('<li><a href="/ways-to-donate.html">Ways To Donate</a></li>')
+    mobile.append('<li><a href="/give.html">Give</a></li>')
 
     return f"""<div class="announcement">
-  Training &amp; equipping African pastors to study, practice &amp; teach God's Word accurately.
-  <a href="/ways-to-donate.html">Support the work</a>
+  Preaching Christ and ministering God&rsquo;s love on campus and beyond.
+  <a href="/fellowships.html">Find a fellowship</a>
 </div>
 
 <header class="header">
   <div class="header__inner">
     <a class="brand" href="/index.html">
-      <img class="brand__mark" src="/assets/img/pdn-logo-white.png" alt="MUK CU logo" width="44" height="53">
+      <img class="brand__mark" src="/assets/img/muk-mark-white.png" alt="MUK CU" width="44" height="53">
       <span class="brand__text">Makerere<br>University<br>Christian Union</span>
     </a>
     <nav class="nav" aria-label="Main navigation">{''.join(desktop)}</nav>
@@ -138,6 +140,42 @@ def banner(title, sub, desc, img, short=False, cue=False, actions="", pos="cente
 """
 
 
+def hero_slideshow(slides, cue=True):
+    """Home hero: stacked background images that fade out to full black,
+    then fade back up with the next image and its own words.
+
+    Each slide is an absolutely-stacked layer (matching the source template's
+    stacked full-bleed banners). A black curtain sits above the images and
+    below nothing else, so the whole hero blacks out between slides.
+    """
+    layers, texts = [], []
+    for i, (img, title, sub, desc, label, href) in enumerate(slides):
+        on = " is-active" if i == 0 else ""
+        layers.append(
+            f'<div class="hero__bg{on}" data-slide="{i}" '
+            f'style="background-image:url(\'/assets/img/{img}\')"></div>')
+        subhtml = f'<p class="banner__sub">{sub}</p>' if sub else ""
+        texts.append(f"""<div class="hero__text{on}" data-slide="{i}">
+      <h1 class="banner__title">{title}</h1>
+      {subhtml}
+      <div class="banner__desc">{desc}</div>
+      <div class="banner__actions"><a class="btn" href="{href}">{label}</a></div>
+    </div>""")
+    dots = "".join(
+        f'<button class="hero__dot{" is-active" if i == 0 else ""}" type="button" '
+        f'data-goto="{i}" aria-label="Go to slide {i+1}"></button>'
+        for i in range(len(slides)))
+    cuehtml = '<a class="scroll-cue" href="#what-we-do-content">Scroll Down</a>' if cue else ""
+    return f"""<section class="banner hero" id="what-we-do" data-hero>
+  <div class="hero__stack">{''.join(layers)}</div>
+  <div class="hero__curtain"></div>
+  <div class="banner__inner hero__inner">{''.join(texts)}</div>
+  <div class="hero__dots">{dots}</div>
+  {cuehtml}
+</section>
+"""
+
+
 def gallery(images, cols=3):
     """images: list of (filename, caption)."""
     cls = "gallery" if cols == 3 else f"gallery gallery--{cols}"
@@ -167,23 +205,21 @@ def person(img, name, role, bio):
 
 
 def footer():
-    return """<footer class="footer">
+    import content as C
+    return f"""<footer class="footer">
   <div class="wrapper">
     <div class="footer__grid">
       <div>
         <div class="footer__brand">
-          <img src="/assets/img/pdn-logo-white.png" alt="MUK CU logo" width="40" height="48">
-          <span>Pastors<br>Discipleship Network</span>
+          <img src="/assets/img/muk-mark-white.png" alt="MUK CU logo" width="40" height="48">
+          <span>Makerere<br>University<br>Christian Union</span>
         </div>
-        <p>Training &amp; equipping African pastors to study, practice &amp; teach God's Word accurately.</p>
+        <p>{C.TAGLINE}</p>
         <div class="socials">
-          <a href="https://www.facebook.com/PDNAfrica/" aria-label="Facebook" target="_blank" rel="noopener">
+          <a href="{C.FACEBOOK}" aria-label="Facebook" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
           </a>
-          <a href="https://instagram.com/pdnafrica" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.2a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/channel/UC6y_XIXd-Dxb9zWGIh4CHrQ" aria-label="YouTube" target="_blank" rel="noopener">
+          <a href="{C.YOUTUBE}" aria-label="YouTube" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5a2.5 2.5 0 0 0-1.8 1.8C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
           </a>
         </div>
@@ -191,25 +227,26 @@ def footer():
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="/index.html">About MUK CU</a></li>
-          <li><a href="/pastoral-training.html">Pastoral Training</a></li>
-          <li><a href="/impacting-women.html">Impacting Women</a></li>
-          <li><a href="/cornerstone-university.html">Cornerstone University</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/ways-to-donate.html">Ways To Donate</a></li>
+          <li><a href="/about.html">Who We Are</a></li>
+          <li><a href="/history.html">Our History</a></li>
+          <li><a href="/fellowships.html">Fellowships</a></li>
+          <li><a href="/leadership.html">Leadership</a></li>
+          <li><a href="/news.html">News</a></li>
+          <li><a href="/give.html">Give</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
-        <p><strong>MUK CU USA</strong><br>C/O Eden Bridge Foundation<br>909 Eden Rd, Lancaster, PA 17601<br>
-        <a href="tel:+17175608270">(717) 560-8270</a></p>
-        <p><strong>MUK CU Uganda Ltd</strong><br>Plot 2312 &amp; 67 Bweyogerere, Kazinga<br>Kira, Wakiso District, Uganda</p>
-        <p><a href="mailto:info@pdnafrica.org">info@pdnafrica.org</a></p>
+        <h4>Gather With Us</h4>
+        <p><strong>Lunch Hour</strong><br>Tuesdays &amp; Fridays, midday</p>
+        <p><strong>Prayer Altar</strong><br>Tuesdays &amp; Thursdays, 6&ndash;8 PM</p>
+        <p>{C.LOCATION}</p>
+        <p><a href="tel:{C.PHONE.replace(' ', '')}">{C.PHONE}</a></p>
+        <p><a href="/contact.html">Find your fellowship &rarr;</a></p>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2026</span> Makerere University Christian Union. A 501(c)(3) public charity &middot; Tax ID 27-2014552.</span>
-      <span>Integrity &middot; Christ-centeredness &middot; Institutional Excellence &middot; Service</span>
+      <span>&copy; <span data-year>2026</span> {C.NAME}. Affiliated to FOCUS-Uganda.</span>
+      <span>On the hill since {C.FOUNDED}.</span>
     </div>
   </div>
 </footer>
@@ -217,12 +254,10 @@ def footer():
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
   <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
   <button class="lightbox__nav lightbox__prev" type="button" aria-label="Previous">&#8249;</button>
-  <img src="" alt="">
+  <img alt="">
   <button class="lightbox__nav lightbox__next" type="button" aria-label="Next">&#8250;</button>
   <div class="lightbox__cap"></div>
 </div>
-
 <script src="/assets/js/site.js"></script>
 </body>
-</html>
-"""
+</html>"""

@@ -149,6 +149,81 @@
     });
   });
 
+
+  /* ---------- Home hero: fade to black, swap, fade back up ---------- */
+  var hero = document.querySelector('[data-hero]');
+  if (hero) {
+    var bgs    = [].slice.call(hero.querySelectorAll('.hero__bg'));
+    var texts  = [].slice.call(hero.querySelectorAll('.hero__text'));
+    var dots   = [].slice.call(hero.querySelectorAll('.hero__dot'));
+    var count  = bgs.length;
+    var idx    = 0;
+    var busy   = false;
+    var timer  = null;
+    var HOLD   = 5200;   // time a slide is readable
+    var BLACK  = 850;    // must match .hero__curtain transition
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Warm the cache so the next image never flashes in half-loaded.
+    bgs.forEach(function (el) {
+      var m = /url\(['"]?([^'")]+)['"]?\)/.exec(el.style.backgroundImage);
+      if (m) { var im = new Image(); im.src = m[1]; }
+    });
+
+    function paint(n) {
+      bgs.forEach(function (el, i)   { el.classList.toggle('is-active', i === n); });
+      texts.forEach(function (el, i) { el.classList.toggle('is-active', i === n); });
+      dots.forEach(function (el, i)  { el.classList.toggle('is-active', i === n); });
+    }
+
+    function go(n) {
+      if (busy || n === idx || !count) return;
+      busy = true;
+      clearTimeout(timer);
+      // 1. curtain rises to full black
+      hero.classList.add('is-blacked');
+      // 2. once opaque, swap image + words underneath
+      setTimeout(function () {
+        idx = n;
+        paint(idx);
+        // 3. curtain falls, revealing the new slide
+        setTimeout(function () {
+          hero.classList.remove('is-blacked');
+          setTimeout(function () { busy = false; }, reduce ? 0 : BLACK);
+          schedule();
+        }, 60);
+      }, reduce ? 0 : BLACK);
+    }
+
+    function next() { go((idx + 1) % count); }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (reduce || count < 2) return;
+      timer = setTimeout(next, HOLD);
+    }
+
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () {
+        go(parseInt(d.getAttribute('data-goto'), 10));
+      });
+    });
+
+    // Pause while the tab is hidden so it doesn't burn cycles in background.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) clearTimeout(timer); else schedule();
+    });
+
+    // Pause on hover / focus so a slide can be read or its button clicked.
+    hero.addEventListener('mouseenter', function () { clearTimeout(timer); });
+    hero.addEventListener('mouseleave', schedule);
+    hero.addEventListener('focusin',  function () { clearTimeout(timer); });
+    hero.addEventListener('focusout', schedule);
+
+    paint(0);
+    schedule();
+  }
+
   /* ---------- Footer year ---------- */
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

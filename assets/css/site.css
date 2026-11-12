@@ -311,3 +311,48 @@ body.nav-open{overflow:hidden}
   .banner__media{position:absolute}
   body{font-size:11pt}
 }
+
+/* ---------- Home hero slideshow (fade through black) ----------
+   Layers are stacked absolutely, exactly like the source template's
+   stacked full-bleed banners. Between slides a black curtain fades up
+   to full opacity, the next image + words are swapped underneath it,
+   then the curtain fades back down. */
+.hero{isolation:isolate}
+.hero__stack{position:absolute;inset:0;z-index:0}
+.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;opacity:0;visibility:hidden}
+.hero__bg.is-active{opacity:1;visibility:visible}
+
+/* The blackout. Sits above the imagery, below the copy. */
+.hero__curtain{position:absolute;inset:0;z-index:1;background:#000;opacity:0;pointer-events:none;
+  transition:opacity .85s cubic-bezier(.4,0,.2,1)}
+.hero.is-blacked .hero__curtain{opacity:1}
+
+/* Copy swaps while the curtain is fully opaque. */
+.hero__inner{position:relative;z-index:2;display:grid}
+.hero__text{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s ease}
+.hero__text.is-active{opacity:1;visibility:visible}
+.hero.is-blacked .hero__text{opacity:0}
+
+.hero__dots{position:absolute;left:0;right:0;bottom:104px;z-index:3;display:flex;justify-content:center;gap:12px}
+.hero__dot{width:10px;height:10px;padding:0;border:1px solid rgba(255,255,255,.75);border-radius:50%;
+  background:transparent;cursor:pointer;transition:background .25s ease,transform .25s ease}
+.hero__dot:hover{transform:scale(1.25)}
+.hero__dot.is-active{background:#fff}
+.hero .scroll-cue{z-index:3}
+
+/* Stacked/parallax feel on the interior banners, as on the source site.
+   Fixed attachment is unreliable on iOS, so it is desktop-only. */
+@media (min-width:901px) and (hover:hover){
+  .banner__media{background-attachment:fixed}
+}
+@media (max-width:900px){
+  .hero__dots{bottom:92px}
+}
+@media (max-width:560px){
+  .hero__dots{bottom:84px;gap:10px}
+  .hero__dot{width:9px;height:9px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__curtain,.hero__text{transition:none}
+  .banner__media{background-attachment:scroll}
+}
