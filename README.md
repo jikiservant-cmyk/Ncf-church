@@ -128,9 +128,16 @@ real campus, chapel and fellowship photographs. Per-file provenance is recorded 
 
 - [ ] **Logo** — `assets/img/muk-mark*.png` is a simple typographic placeholder
       (cross + open book), not the Union's official mark. Replace with the real logo.
-- [ ] **Verify the details** — meeting days/times, phone number and the docket list
-      are drawn from public sources and may be out of date. Confirm with the
-      current executive.
+- [x] **Contacts, theme and meeting times** — now from the Union's own CU Structure
+      document: P.O. Box 16631 Wandegeya, christianunion.mak@gmail.com,
+      fellowship Tue/Fri 12:45 PM, prayer altar Thursdays 6:00 PM.
+- [ ] **Confirm the Twitter / X profile URL** — the handle was supplied as
+      `@mukmain cu`, so it is shown as text, not a link.
+- [ ] **Two church-based fellowships** — the Union's document leaves the list to be
+      added. `/structure.html` shows the count (2) and average (31) with a note;
+      send the names and they will appear.
+- [ ] **Docket list** — the leadership dockets come from public sources, not the
+      structure document. Confirm with the current executive.
 - [ ] **Executive names** — the leadership page lists dockets, not office holders,
       because current names aren't published. Add them if you want them shown.
 - [ ] **Giving** — no payment details are published; the page directs givers to
@@ -146,7 +153,7 @@ real campus, chapel and fellowship photographs. Per-file provenance is recorded 
 ## Structure
 
 ```
-├── *.html                  17 generated pages
+├── *.html                  18 generated pages
 ├── sitemap.xml robots.txt  generated SEO files
 ├── server.js               static server (0.0.0.0, styled 404)
 ├── assets/

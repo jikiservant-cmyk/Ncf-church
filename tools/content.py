@@ -100,21 +100,25 @@ FELLOWSHIP_TYPES = [
      ["Gatherings within the University halls of residence &mdash; among them Nkrumah, "
       "Nsibirwa, Livingstone, University Hall, Mitchell, Africa, Mary Stuart and the "
       "CCE Complex.",
-      "Some halls fellowship together; Afrostone, for example, brings together students "
-      "of Africa and Livingstone halls.",
+      "Together they number about 89 students, averaging around 17 per fellowship.",
       "Hall fellowships meet through the week for Bible study, prayer and worship, and "
       "are the first place a resident student is welcomed."]),
     ("College Fellowships",
-     ["Fellowships organised around the colleges and schools of the University, so that "
-      "students meet with those who share their timetable, their discipline and their "
-      "pressures.",
-      "College fellowships reach students who do not reside on campus and often meet "
-      "between lectures."]),
+     ["Eleven fellowships meet around the colleges and schools of the University, so "
+      "that students gather with those who share their timetable and discipline.",
+      "They include Conas, FSTNB, SSP, COCIS, MESCA, COBAMS, DASE, CHUSS, SOL, SFEGS "
+      "and SFTNB &mdash; about 485 students in all, averaging around 44.",
+      "Most meet at noon or during lunch hour; SOL gathers on Fridays."]),
     ("Hostel Fellowships",
-     ["The greater number of Makerere students live in hostels around Kikoni, Kikumi "
-      "Kikumi, Wandegeya and the surrounding neighbourhoods.",
-      "Hostel fellowships take the Union to those students, meeting in and around the "
-      "hostels so that distance from campus is no barrier to belonging."]),
+     ["Six fellowships take the Union to students living in hostels around the "
+      "University: Paramount, Garden Courts, Kare, Mish, Baskon and New Bush Zion.",
+      "Together they number about 150 students, averaging around 25 &mdash; so that "
+      "distance from campus is no barrier to belonging."]),
+    ("Mission Team Fellowships",
+     ["Ten mission teams carry the work beyond the hill, among them Kumi Team, Jesu Is "
+      "King, Jesus is Lord Ministry, Tororo Busia, Teso (TEMISS), MUSACRIF, Campus "
+      "Chapter, RUF, Lango Gospel Missioners and the Mbale&ndash;Kapchorwa&ndash;Sironko team.",
+      "About 252 students serve in these teams, averaging around 25 each."]),
 ]
 
 # ---------------------------------------------------------------- MINISTRY AREAS
@@ -159,12 +163,12 @@ PRAYER = [
 # ---------------------------------------------------------------- WEEKLY RHYTHM
 # Announced at MUK CU Lunch Hour, 29 October 2024.
 WEEKLY = [
-    ("Lunch Hour", "Tuesdays &amp; Fridays", "Midday",
-     "The Union gathers in the middle of the day for worship, testimonies and the "
-     "teaching of the word."),
-    ("Prayer Altar", "Tuesdays &amp; Thursdays", "6:00 &ndash; 8:00 PM",
-     "Evening intercession &mdash; in the words of the Union, where we get our strength "
-     "and our wisdom."),
+    ("Main CU Fellowship", "Tuesdays &amp; Fridays", "12:45 PM",
+     "The Union gathers at St Francis Chapel in the middle of the day for worship, "
+     "testimonies and the teaching of the word."),
+    ("Main CU Prayer Altar", "Thursdays", "6:00 PM",
+     "Evening intercession at St Francis Chapel &mdash; where the Union draws its "
+     "strength and its wisdom."),
     ("Fellowship Meetings", "Through the week", "Hall, College &amp; Hostel",
      "Bible study and prayer in the small gatherings where every member belongs."),
 ]
@@ -262,7 +266,7 @@ GIVING_USES = [
 ]
 
 # ---------------------------------------------------------------- CONTACT
-PHONE = "+256 777 345125"
+PHONE = "+256 777 345125"   # from public listing; not in the official doc
 LOCATION = "St Francis Chapel, Makerere University, Kampala, Uganda"
 WEBSITE = "www.mukchristianunion.org"
 FACEBOOK = ("https://www.facebook.com/people/Makerere-University-Christian-UnionMukCU/"
@@ -320,3 +324,100 @@ POSTS = [
       "day, the prayer altar in the evening, and the small gatherings through the week. "
       "God&rsquo;s saving grace is abundant to reach every soul on campus."]),
 ]
+
+
+# ================================================================ OFFICIAL DATA
+# Supplied directly by the Union (CU Structure document).
+# Theme by Papa Kwemboi Lewis.
+
+THEME = "Preaching Christ with Love"
+THEME_SCRIPTURE = "Ephesians 4:14&ndash;16"
+THEME_BY = "Papa Kwemboi Lewis"
+
+POSTAL = "P.O. Box 16631, Wandegeya, Kampala, Uganda"
+EMAIL = "christianunion.mak@gmail.com"
+FACEBOOK_NAME = "M.U.K Christian Union"
+TWITTER_HANDLE = "@mukmain cu"
+
+STRUCTURE_NOTE = (
+    "Independent and church-based fellowships are not affiliated with the Christian "
+    "Union; their relationship to the CU structure is shown for reference only.")
+
+# (Program, Meeting time, Venue, Students)
+MAIN_PROGRAMS = [
+    ("Main CU Fellowship", "Tuesdays &amp; Fridays, 12:45 PM", "St Francis Chapel", 125),
+    ("Main CU Prayer Altar", "Thursdays, 6:00 PM", "St Francis Chapel", 35),
+]
+
+# (count, average, [(name, students), ...])
+HALL_FELLOWSHIPS = [
+    ("Afrostone", 18), ("Nkurusi View", 5), ("Lumbox", 30),
+    ("Mitchellex", 16), ("UH", 20),
+]
+HALL_AVG = 17
+
+COLLEGE_FELLOWSHIPS = [
+    ("Conas Christian Fellowship", 60),
+    ("FSTNB (Wednesdays, noon)", 30),
+    ("SSP (noon)", 40),
+    ("COCIS (Wednesdays, noon)", 30),
+    ("MESCA", 80),
+    ("COBAMS", 60),
+    ("DASE (lunch hour)", 30),
+    ("CHUSS (noon)", 50),
+    ("SOL (Fridays)", 25),
+    ("SFEGS (Wednesdays)", 50),
+    ("SFTNB", 30),
+]
+COLLEGE_AVG = 44
+
+HOSTEL_FELLOWSHIPS = [
+    ("Paramount Hostel Christian Fellowship", 50),
+    ("Garden Courts CF", 15),
+    ("Kare Hostel CF", 20),
+    ("Mish Hostel CF", 15),
+    ("Baskon Hostel CF", 40),
+    ("New Bush Zion CF", 10),
+]
+HOSTEL_AVG = 25
+
+MISSION_FELLOWSHIPS = [
+    ("Kumi Team (Nsibirwa, evening)", 10),
+    ("Jesu Is King (JIK)", 20),
+    ("Jesus is Lord Ministry (JIL)", 25),
+    ("Tororo Busia Mission Team (TBM)", 10),
+    ("Teso Mission Team (TEMISS)", 20),
+    ("Makerere University Sabiny Christian Fellowship (MUSACRIF)", 30),
+    ("Campus Chapter", 40),
+    ("Reformed University Fellowship (RUF)", 25),
+    ("Lango Gospel Missioners (LAGOM)", 32),
+    ("Mbale, Kapchorwa, Sironko Mission Team (MKSMT)", 40),
+]
+MISSION_AVG = 25
+
+CHURCH_BASED_COUNT = 2
+CHURCH_BASED_AVG = 31
+CHURCH_BASED_NOTE = "List of church-based fellowships to be added."
+
+INDEPENDENT_FELLOWSHIPS = [
+    ("Manifest Fellowship", 45),
+    ("Makerere University Born Again Students Association (MUBASA)", 42),
+]
+INDEPENDENT_AVG = 40
+INDEPENDENT_NOTE = (
+    "These fellowships operate independently and do not subscribe to the Main "
+    "Christian Union. Additional independent fellowships may be added as identified.")
+
+# (Category, Number of fellowships)
+SUMMARY = [
+    ("Hall Fellowships", 5),
+    ("College Fellowships", 11),
+    ("Hostel Fellowships", 6),
+    ("Mission Team Fellowships", 10),
+    ("Church-Based Fellowships", 2),
+    ("Independent Fellowships", 2),
+]
+SUMMARY_TOTAL = 34
+SUMMARY_NOTE = (
+    "The total of 34 counts the fellowships within the CU structure and excludes the "
+    "two independent fellowships, which are listed for reference only.")

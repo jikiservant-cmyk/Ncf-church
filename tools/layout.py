@@ -21,6 +21,8 @@ NAV = [
         ("Hall Fellowships", "/fellowships.html#halls"),
         ("College Fellowships", "/fellowships.html#colleges"),
         ("Hostel Fellowships", "/fellowships.html#hostels"),
+        ("Mission Teams", "/fellowships.html#missions"),
+        ("Full CU Structure", "/structure.html"),
     ]),
     ("Ministry", "/discipleship.html", [
         ("Discipleship", "/discipleship.html"),
@@ -94,8 +96,8 @@ def header(active="/index.html"):
     mobile.append('<li><a href="/give.html">Give</a></li>')
 
     return f"""<div class="announcement">
-  Preaching Christ and ministering God&rsquo;s love on campus and beyond.
-  <a href="/fellowships.html">Find a fellowship</a>
+  Theme: Preaching Christ with Love &mdash; Ephesians 4:14&ndash;16
+  <a href="/structure.html">Find a fellowship</a>
 </div>
 
 <header class="header">
@@ -206,6 +208,43 @@ def gallery(images, cols=3):
     return f'<div class="{cls}">{figs}</div>'
 
 
+def table(headers, rows, caption=None, num_cols=(), index=False, foot=None):
+    """Data table matching the site's type scale. num_cols are right-aligned."""
+    cap = f"<caption>{caption}</caption>" if caption else ""
+    th = []
+    if index:
+        th.append('<th class="idx" scope="col">No.</th>')
+    for i, h in enumerate(headers):
+        cls = ' class="num"' if i in num_cols else ""
+        th.append(f'<th scope="col"{cls}>{h}</th>')
+    body = []
+    for n, row in enumerate(rows, 1):
+        tds = [f'<td class="idx">{n}</td>'] if index else []
+        for i, c in enumerate(row):
+            cls = ' class="num"' if i in num_cols else ""
+            tds.append(f"<td{cls}>{c}</td>")
+        body.append("<tr>" + "".join(tds) + "</tr>")
+    tf = ""
+    if foot:
+        cells = []
+        if index:
+            cells.append("<td></td>")
+        for i, c in enumerate(foot):
+            cls = ' class="num"' if i in num_cols else ""
+            cells.append(f"<td{cls}>{c}</td>")
+        tf = "<tfoot><tr>" + "".join(cells) + "</tr></tfoot>"
+    return (f'<div class="table-wrap"><table class="data">{cap}'
+            f'<thead><tr>{"".join(th)}</tr></thead>'
+            f'<tbody>{"".join(body)}</tbody>{tf}</table></div>')
+
+
+def meta(items):
+    """items: (number, label) — small stat cards."""
+    return '<div class="meta-grid">' + "".join(
+        f'<div class="meta reveal"><span class="meta__n">{n}</span>'
+        f'<span class="meta__l">{l}</span></div>' for n, l in items) + "</div>"
+
+
 def quote(text, cite=None, plain=False):
     cls = "quote quote--plain" if plain else "quote"
     c = f"<cite>&mdash; {cite}</cite>" if cite else ""
@@ -233,6 +272,7 @@ def footer():
           <span>Makerere<br>University<br>Christian Union</span>
         </div>
         <p>{C.TAGLINE}</p>
+        <p><strong>Theme:</strong> {C.THEME}<br>{C.THEME_SCRIPTURE}</p>
         <div class="socials">
           <a href="{C.FACEBOOK}" aria-label="Facebook" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
@@ -240,6 +280,10 @@ def footer():
           <a href="{C.YOUTUBE}" aria-label="YouTube" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5a2.5 2.5 0 0 0-1.8 1.8C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
           </a>
+          <span class="socials__handle" title="Twitter / X">
+            <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L22.7 22h-6.3l-4.9-6.4L5.8 22H2.7l7.3-8.3L1.6 2H8l4.6 6.1L18.9 2zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20z"/></svg>
+            <span>{C.TWITTER_HANDLE}</span>
+          </span>
         </div>
       </div>
       <div>
@@ -248,6 +292,7 @@ def footer():
           <li><a href="/about.html">Who We Are</a></li>
           <li><a href="/history.html">Our History</a></li>
           <li><a href="/fellowships.html">Fellowships</a></li>
+          <li><a href="/structure.html">CU Structure</a></li>
           <li><a href="/leadership.html">Leadership</a></li>
           <li><a href="/news.html">News</a></li>
           <li><a href="/give.html">Give</a></li>
@@ -255,11 +300,12 @@ def footer():
       </div>
       <div>
         <h4>Gather With Us</h4>
-        <p><strong>Lunch Hour</strong><br>Tuesdays &amp; Fridays, midday</p>
-        <p><strong>Prayer Altar</strong><br>Tuesdays &amp; Thursdays, 6&ndash;8 PM</p>
-        <p>{C.LOCATION}</p>
-        <p><a href="tel:{C.PHONE.replace(' ', '')}">{C.PHONE}</a></p>
-        <p><a href="/contact.html">Find your fellowship &rarr;</a></p>
+        <p><strong>Main CU Fellowship</strong><br>Tuesdays &amp; Fridays, 12:45 PM</p>
+        <p><strong>Prayer Altar</strong><br>Thursdays, 6:00 PM</p>
+        <p>St Francis Chapel</p>
+        <p>{C.POSTAL}</p>
+        <p><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></p>
+        <p><a href="/structure.html">Find your fellowship &rarr;</a></p>
       </div>
     </div>
     <div class="footer__bottom">

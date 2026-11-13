@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from layout import (head, header, footer, banner, band, hero_slideshow, gallery,
-                    quote, person, SITE)
+                    quote, person, table, meta, SITE)
 import content as C
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +49,7 @@ def build_home():
   <p class="section-heading center">Who We Are</p>
   <h1 class="center" style="max-width:900px;margin:0 auto 30px">An interdenominational fellowship of Christian students at Makerere University.</h1>
   <p class="lead center" style="max-width:780px;margin:0 auto">{C.ABOUT_INTRO}</p>
+  {quote('&ldquo;' + C.THEME + '&rdquo;', 'This Year&rsquo;s Theme &middot; ' + C.THEME_SCRIPTURE)}
   {quote('&ldquo;' + C.MISSION + '&rdquo;', 'Our Mission')}
   {paras(C.ABOUT_MORE)}
   {gallery([("cu-full-hall.jpg", "A full hall for the ministry of the word"),
@@ -80,8 +81,16 @@ def build_home():
                     "muk-chapel-group.jpg", anchor="fellowships",
                     actions='<a class="btn" href="/fellowships.html">Find Your Fellowship</a>'))
     fc = [(h, paras(ps)) for h, ps in C.FELLOWSHIP_TYPES]
+    struct_counts = meta([
+        (len(C.HALL_FELLOWSHIPS), "Hall Fellowships"),
+        (len(C.COLLEGE_FELLOWSHIPS), "College Fellowships"),
+        (len(C.HOSTEL_FELLOWSHIPS), "Hostel Fellowships"),
+        (len(C.MISSION_FELLOWSHIPS), "Mission Teams"),
+    ])
     b.append(f"""<section class="section"><div class="wrapper">
+  {struct_counts}
   {cards(fc)}
+  <p class="center" style="margin:0 0 40px"><a class="btn btn--dark" href="/structure.html">See The Full CU Structure</a></p>
   {gallery([("cu-sisters.jpg", "Sisters of the fellowship"),
             ("cu-chapel-celebration.jpg", "Celebrating together"),
             ("cu-full-hall.jpg", "The hall filled")])}
@@ -148,6 +157,8 @@ def build_about():
   <h1>About the Union</h1>
   <p class="lead">{C.ABOUT_INTRO}</p>
   {paras(C.ABOUT_MORE)}
+  {quote('&ldquo;' + C.THEME + '&rdquo;', 'This Year&rsquo;s Theme &middot; ' + C.THEME_SCRIPTURE)}
+  {quote('&ldquo;' + C.THEME + '&rdquo;', 'Theme &middot; ' + C.THEME_SCRIPTURE + ' &middot; ' + C.THEME_BY)}
   {quote('&ldquo;' + C.MISSION + '&rdquo;', 'Our Mission')}
   <h2>Our Vision</h2>
   <p>{C.VISION}</p>
@@ -193,7 +204,7 @@ def build_history():
 def build_fellowships():
     b = [banner("Fellowships", "Hall &bull; College &bull; Hostel", C.FELLOWSHIP_INTRO,
                 "muk-chapel-group.jpg", short=True)]
-    ids = ["halls", "colleges", "hostels"]
+    ids = ["halls", "colleges", "hostels", "missions"]
     body = []
     for (h, ps), aid in zip(C.FELLOWSHIP_TYPES, ids):
         body.append(f'<div id="{aid}"><h2>{h}</h2>{ul(ps)}</div>')
@@ -202,6 +213,7 @@ def build_fellowships():
   <p class="lead">{C.FELLOWSHIP_INTRO}</p>
   {''.join(body)}
   {quote('&ldquo;' + C.VISION + '&rdquo;', 'Our Vision')}
+  <p class="center" style="margin:34px 0"><a class="btn btn--dark" href="/structure.html">Full CU Structure &amp; Membership</a></p>
   {gallery([("cu-chapel-family.jpg", "A fellowship gathered"),
             ("cu-sisters.jpg", "Sisters of the fellowship"),
             ("cu-full-hall.jpg", "The wider Union gathered")])}
@@ -286,7 +298,7 @@ def build_prayer():
   <div class="cards">{rows}</div>
 </div></section>""")
     page("prayer.html", "Prayer Altar",
-         "Evening intercession for the University, the nation and the lost on campus — Tuesdays and Thursdays, 6–8 PM.", "".join(b))
+         "Evening intercession for the University, the nation and the lost on campus — Thursdays at 6:00 PM at St Francis Chapel.", "".join(b))
 
 
 # ---------------------------------------------------------------- GATHERINGS
@@ -299,7 +311,7 @@ def build_lunch_hour():
     b.append(f"""<section class="section"><div class="wrapper">
   <h1>Midday on the hill</h1>
   <p class="lead">Lunch Hour is the Union&rsquo;s gathering in the middle of the academic day &mdash; worship, testimonies from members, and the ministry of the word. Visitors are welcomed at every meeting.</p>
-  <p>Guest ministers join the Union through the year. Recordings of past meetings are published on the Union&rsquo;s YouTube channel.</p>
+  <p>The Main CU Fellowship meets at <strong>St Francis Chapel</strong> at <strong>12:45 PM</strong> on Tuesdays and Fridays, with around 125 students gathering. Guest ministers join the Union through the year. Recordings of past meetings are published on the Union&rsquo;s YouTube channel.</p>
   <div class="cards">{rows}</div>
   {gallery([("cu-full-hall.jpg", "The hall filled"),
             ("cu-chapel-family.jpg", "Gathered in the chapel"),
@@ -308,7 +320,7 @@ def build_lunch_hour():
     <a class="btn btn--dark" href="{C.YOUTUBE}" target="_blank" rel="noopener">Watch Past Meetings</a></p>
 </div></section>""")
     page("lunch-hour.html", "Lunch Hour",
-         "MUK CU Lunch Hour — Tuesdays and Fridays at midday. Worship, testimonies and teaching, open to every student.", "".join(b))
+         "MUK CU Main Fellowship — Tuesdays and Fridays at 12:45 PM at St Francis Chapel. Worship, testimonies and teaching, open to every student.", "".join(b))
 
 
 def build_night():
@@ -333,7 +345,7 @@ def build_events():
   <h1>What marks the year</h1>
   {cards(ev)}
   <h2>Weekly gatherings</h2>
-  <p>Lunch Hour meets Tuesdays and Fridays at midday; the prayer altar gathers Tuesdays and Thursdays from 6 to 8 in the evening. Fellowship meetings run through the week in the halls, colleges and hostels.</p>
+  <p>The Main CU Fellowship meets Tuesdays and Fridays at 12:45 PM at St Francis Chapel; the prayer altar gathers on Thursdays at 6:00 PM. Fellowship meetings run through the week in the halls, colleges, hostels and mission teams.</p>
   {gallery([("cu-celebration.jpg", "Marking the occasion together"),
             ("cu-chapel-celebration.jpg", "Celebrating in the chapel"),
             ("cu-awards.jpg", "Recognising service"),
@@ -431,18 +443,19 @@ def build_contact():
     <div>
       <h1>Get in touch</h1>
       <p class="lead">{C.CONTACT_INTRO}</p>
-      <p><strong>Where we are:</strong><br>{C.LOCATION}</p>
-      <p><strong>Phone:</strong><br><a href="tel:{C.PHONE.replace(' ', '')}">{C.PHONE}</a></p>
-      <p><strong>Website:</strong><br><a href="https://{C.WEBSITE}" target="_blank" rel="noopener">{C.WEBSITE}</a></p>
-      <p><strong>Facebook:</strong><br><a href="{C.FACEBOOK}" target="_blank" rel="noopener">Makerere University Christian Union</a></p>
-      <p><strong>YouTube:</strong><br><a href="{C.YOUTUBE}" target="_blank" rel="noopener">Watch Lunch Hour and past meetings</a></p>
+      <p><strong>Postal address:</strong><br>{C.POSTAL}</p>
+      <p><strong>Email:</strong><br><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></p>
+      <p><strong>Where we meet:</strong><br>St Francis Chapel, Makerere University</p>
+      <p><strong>Facebook:</strong><br><a href="{C.FACEBOOK}" target="_blank" rel="noopener">{C.FACEBOOK_NAME}</a></p>
+      <p><strong>Twitter / X:</strong><br>{C.TWITTER_HANDLE}</p>
+      <p><strong>YouTube:</strong><br><a href="{C.YOUTUBE}" target="_blank" rel="noopener">Watch past meetings</a></p>
     </div>
     <div>
       <h2>Visiting</h2>
       {ul(C.VISIT)}
       <h2>Gather with us</h2>
-      <p><strong>Lunch Hour</strong> &mdash; Tuesdays &amp; Fridays, midday<br>
-         <strong>Prayer Altar</strong> &mdash; Tuesdays &amp; Thursdays, 6&ndash;8 PM</p>
+      {table(["Program", "Time", "Venue"], [(n, t, v) for n, t, v, _ in C.MAIN_PROGRAMS])}
+      <p><a href="/structure.html">See all fellowships &rarr;</a></p>
     </div>
   </div>
 </div></section>""")
@@ -459,7 +472,7 @@ def build_contact():
   </div>
 </div></section>""")
     page("contact.html", "Contact",
-         "Find MUK CU at St Francis Chapel, Makerere University, Kampala. Lunch Hour Tuesdays and Fridays; prayer altar Tuesdays and Thursdays.", "".join(b))
+         "Find MUK CU at St Francis Chapel, Makerere University, Kampala. Fellowship Tuesdays and Fridays at 12:45 PM; prayer altar Thursdays at 6:00 PM.", "".join(b))
 
 
 # ---------------------------------------------------------------- 404
@@ -478,6 +491,94 @@ def build_404():
 </div></section>""")
     page("404.html", "Page Not Found", "The page you were looking for could not be found.",
          "".join(b), active="/404.html")
+
+
+
+# ---------------------------------------------------------------- CU STRUCTURE
+def build_structure():
+    b = [banner("CU Structure", "Fellowships of the Union", C.STRUCTURE_NOTE,
+                "cu-full-hall.jpg", short=True)]
+
+    counts = meta([
+        (len(C.HALL_FELLOWSHIPS), "Hall Fellowships"),
+        (len(C.COLLEGE_FELLOWSHIPS), "College Fellowships"),
+        (len(C.HOSTEL_FELLOWSHIPS), "Hostel Fellowships"),
+        (len(C.MISSION_FELLOWSHIPS), "Mission Teams"),
+        (C.CHURCH_BASED_COUNT, "Church-Based"),
+        (C.SUMMARY_TOTAL, "Total In Structure"),
+    ])
+
+    b.append(f"""<section class="section"><div class="wrapper">
+  <h1>The structure of the Union</h1>
+  <p class="lead">The Christian Union brings together believers across the University through its hall, college, hostel and mission team fellowships.</p>
+  {counts}
+  <h2>Main CU Programs</h2>
+  {table(["Program", "Meeting Time", "Venue", "Students"], C.MAIN_PROGRAMS, num_cols=(3,))}
+</div></section>""")
+
+    b.append(band("Hall Fellowships", "Five fellowships in the halls of residence.",
+                  "cu-chapel-family.jpg"))
+    b.append(f"""<section class="section"><div class="wrapper">
+  <h2>Hall Fellowships</h2>
+  {meta([(len(C.HALL_FELLOWSHIPS), "Fellowships"), (C.HALL_AVG, "Average Students"),
+         (sum(n for _, n in C.HALL_FELLOWSHIPS), "Students Total")])}
+  {table(["Fellowship Name", "Students"], C.HALL_FELLOWSHIPS, num_cols=(1,), index=True)}
+</div></section>""")
+
+    b.append(f"""<section class="section section--alt"><div class="wrapper">
+  <h2>College Fellowships</h2>
+  {meta([(len(C.COLLEGE_FELLOWSHIPS), "Fellowships"), (C.COLLEGE_AVG, "Average Students"),
+         (sum(n for _, n in C.COLLEGE_FELLOWSHIPS), "Students Total")])}
+  {table(["Fellowship Name", "Students"], C.COLLEGE_FELLOWSHIPS, num_cols=(1,), index=True)}
+</div></section>""")
+
+    b.append(band("Hostel Fellowships", "Taking the Union to students off campus.",
+                  "cu-sisters.jpg"))
+    b.append(f"""<section class="section"><div class="wrapper">
+  <h2>Hostel Fellowships</h2>
+  {meta([(len(C.HOSTEL_FELLOWSHIPS), "Fellowships"), (C.HOSTEL_AVG, "Average Students"),
+         (sum(n for _, n in C.HOSTEL_FELLOWSHIPS), "Students Total")])}
+  {table(["Fellowship Name", "Students"], C.HOSTEL_FELLOWSHIPS, num_cols=(1,), index=True)}
+</div></section>""")
+
+    b.append(f"""<section class="section section--alt"><div class="wrapper">
+  <h2>Mission Team Fellowships</h2>
+  {meta([(len(C.MISSION_FELLOWSHIPS), "Teams"), (C.MISSION_AVG, "Average Students"),
+         (sum(n for _, n in C.MISSION_FELLOWSHIPS), "Students Total")])}
+  {table(["Fellowship / Team Name", "Students"], C.MISSION_FELLOWSHIPS, num_cols=(1,), index=True)}
+</div></section>""")
+
+    b.append(band("Beyond the hill", "Mission teams carry the gospel across Uganda.",
+                  "cu-mission-joy.jpg"))
+    b.append(f"""<section class="section"><div class="wrapper">
+  <h2>Church-Based Fellowships</h2>
+  {meta([(C.CHURCH_BASED_COUNT, "Fellowships"), (C.CHURCH_BASED_AVG, "Average Students")])}
+  <p class="table-note">{C.CHURCH_BASED_NOTE}</p>
+
+  <h2>Independent Fellowships</h2>
+  <p>Not affiliated with the CU &mdash; shown for reference only.</p>
+  {meta([(len(C.INDEPENDENT_FELLOWSHIPS), "Fellowships"), (C.INDEPENDENT_AVG, "Average Students")])}
+  {table(["Fellowship Name", "Students"], C.INDEPENDENT_FELLOWSHIPS, num_cols=(1,), index=True)}
+  <p class="table-note">{C.INDEPENDENT_NOTE}</p>
+</div></section>""")
+
+    b.append(f"""<section class="section section--alt"><div class="wrapper">
+  <h2>Summary</h2>
+  {table(["Category", "Number of Fellowships"], C.SUMMARY, num_cols=(1,),
+         foot=["Total", C.SUMMARY_TOTAL])}
+  <p class="table-note">{C.SUMMARY_NOTE}</p>
+  {quote('&ldquo;' + C.THEME + '&rdquo;', C.THEME_SCRIPTURE)}
+</div></section>""")
+
+    b.append("""<section class="section section--dark center"><div class="wrapper">
+  <h1>Find your fellowship</h1>
+  <p class="lead" style="max-width:640px;margin:0 auto 34px">Tell us your hall, college or hostel and we will connect you to the gathering nearest you.</p>
+  <a class="btn btn--solid" href="/contact.html">Get In Touch</a>
+</div></section>""")
+    page("structure.html", "CU Structure",
+         "The fellowships of Makerere University Christian Union — 5 hall, 11 college, "
+         "6 hostel and 10 mission team fellowships, with meeting times and venues.",
+         "".join(b))
 
 
 # ---------------------------------------------------------------- SEO
@@ -509,7 +610,8 @@ def main():
     for fn in (build_home, build_about, build_history, build_fellowships,
                build_discipleship, build_evangelism, build_worship, build_prayer,
                build_lunch_hour, build_night, build_events, build_leadership,
-               build_affiliations, build_give, build_news, build_contact, build_404):
+               build_affiliations, build_give, build_news, build_contact, build_structure,
+               build_404):
         fn()
     for name, html in PAGES.items():
         with open(os.path.join(ROOT, name), "w", encoding="utf-8") as fh:
