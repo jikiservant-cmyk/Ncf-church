@@ -56,9 +56,33 @@ readable 5.2s  →  fade to black 0.85s  →  swap  →  fade up 0.85s  →  rep
 - Images are preloaded so the next slide never appears half-loaded.
 - `prefers-reduced-motion` disables the animation entirely.
 
-Interior banners use `background-attachment: fixed` on desktop for the same
-stacked/parallax feel as the original site (disabled on touch devices and for
-reduced motion, where fixed attachment is unreliable).
+## Pinned background images
+
+Images are **tied to the viewport** — the page content scrolls across them rather
+than carrying them along. This applies to every interior banner and to the
+full-bleed `band()` sections placed between content blocks.
+
+- `background-attachment: fixed` does the work in browsers that support it, at
+  **all screen widths**.
+- iOS Safari ignores that property, so `site.js` detects iOS and counter-scrolls
+  the layer with a `translate3d` on `requestAnimationFrame` — same pinned result.
+- `prefers-reduced-motion` and print stylesheets release the pin.
+
+The home hero slideshow is separate and was left unchanged.
+
+## Photography
+
+The gallery and band images are the Union's **own photographs**, supplied directly:
+chapel gatherings, the choir, a full hall, leadership handover and awards,
+celebrations, and mission trips (open-air outreach, village visits, children).
+15 photos, kept at their native resolution — no upscaling. Per-file provenance in
+`tools/cu_image_sources.json`.
+
+Campus/chapel context shots on the hero and history pages come from Makerere
+University News and Uganda Jubilee Network (`tools/muk_image_sources.json`).
+
+Captions are descriptive only — no names or roles have been invented for anyone
+pictured.
 
 ---
 
@@ -104,32 +128,43 @@ real campus, chapel and fellowship photographs. Per-file provenance is recorded 
 
 - [ ] **Logo** — `assets/img/muk-mark*.png` is a simple typographic placeholder
       (cross + open book), not the Union's official mark. Replace with the real logo.
-- [ ] **Verify the details** — meeting days/times, phone number and the docket list
-      are drawn from public sources and may be out of date. Confirm with the
-      current executive.
+- [x] **Contacts, theme and meeting times** — now from the Union's own CU Structure
+      document: P.O. Box 16631 Wandegeya, christianunion.mak@gmail.com,
+      fellowship Tue/Fri 12:45 PM, prayer altar Thursdays 6:00 PM.
+- [ ] **Confirm the Twitter / X profile URL** — the handle was supplied as
+      `@mukmain cu`, so it is shown as text, not a link.
+- [ ] **Two church-based fellowships** — the Union's document leaves the list to be
+      added. `/structure.html` shows the count (2) and average (31) with a note;
+      send the names and they will appear.
+- [ ] **Docket list** — the leadership dockets come from public sources, not the
+      structure document. Confirm with the current executive.
 - [ ] **Executive names** — the leadership page lists dockets, not office holders,
       because current names aren't published. Add them if you want them shown.
 - [ ] **Giving** — no payment details are published; the page directs givers to
       contact the executive. Add official mobile-money/bank details if desired.
 - [ ] **Newsletter** — front-end only; it shows a thank-you but stores nothing.
       The handler is at the bottom of `assets/js/site.js`.
-- [ ] **Photo rights** — images are press photographs from Makerere University
-      News and Uganda Jubilee Network. Confirm permission before public launch.
+- [ ] **Photo rights** — the Union's own photos were supplied directly. The hero and
+      history pages still use press photographs from Makerere University News and
+      Uganda Jubilee Network; confirm permission for those before public launch.
+- [ ] **Names/captions** — photos are captioned descriptively. Send names and dockets
+      if you want people identified (e.g. the leadership portrait and handover shots).
 
 ## Structure
 
 ```
-├── *.html                  17 generated pages
+├── *.html                  18 generated pages
 ├── sitemap.xml robots.txt  generated SEO files
 ├── server.js               static server (0.0.0.0, styled 404)
 ├── assets/
 │   ├── css/site.css        design system + hero slideshow
 │   ├── js/site.js          nav, hero cycle, lightbox, scroll-spy
 │   ├── fonts/              self-hosted woff2
-│   └── img/                13 files — campus photos + wordmark
+│   └── img/                26 files — the Union's photos, campus shots, wordmark
 └── tools/
     ├── build.py            page generator
     ├── content.py          all MUK CU copy
     ├── layout.py           head / header / hero / footer
-    └── muk_image_sources.json   photo provenance
+    ├── muk_image_sources.json   press photo provenance
+    └── cu_image_sources.json    supplied photo provenance
 ```
