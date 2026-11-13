@@ -224,6 +224,45 @@
     schedule();
   }
 
+
+  /* ---------- Pinned backgrounds ----------
+     Desktop browsers honour background-attachment:fixed, so the image is
+     tied to the viewport and content scrolls past it. iOS Safari ignores
+     that property, so we detect it and drive the layer with a transform
+     on scroll instead — same visual result. */
+  (function pinnedBackgrounds() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+
+    var iOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!iOS) return;   // native fixed attachment already works
+
+    document.documentElement.classList.add('no-bg-fixed');
+    var layers = [].slice.call(document.querySelectorAll('.band__bg, .banner__media'));
+    if (!layers.length) return;
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var vh = window.innerHeight;
+      layers.forEach(function (el) {
+        var host = el.parentElement;
+        var r = host.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) return;   // off-screen, skip
+        // Counter-scroll the layer so it appears nailed to the viewport.
+        el.style.transform = 'translate3d(0,' + (-r.top) + 'px,0)';
+        el.style.height = vh + 'px';
+      });
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
   /* ---------- Footer year ---------- */
   var y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

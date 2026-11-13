@@ -8,7 +8,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from layout import (head, header, footer, banner, hero_slideshow, gallery,
+from layout import (head, header, footer, banner, band, hero_slideshow, gallery,
                     quote, person, SITE)
 import content as C
 
@@ -51,12 +51,16 @@ def build_home():
   <p class="lead center" style="max-width:780px;margin:0 auto">{C.ABOUT_INTRO}</p>
   {quote('&ldquo;' + C.MISSION + '&rdquo;', 'Our Mission')}
   {paras(C.ABOUT_MORE)}
-  {gallery([("muk-congregation.jpg", "Gathered for worship"),
-            ("muk-choir.jpg", "The choir leads praise and worship"),
-            ("muk-listening.jpg", "Listening to the word")])}
+  {gallery([("cu-full-hall.jpg", "A full hall for the ministry of the word"),
+            ("cu-choir.jpg", "The choir"),
+            ("cu-chapel-family.jpg", "The fellowship gathered in the chapel")])}
   {quote('&ldquo;' + C.VISION + '&rdquo;', 'Our Vision')}
   {quote('&ldquo;' + C.BELIEF + '&rdquo;', 'What We Believe')}
 </div></section>""")
+
+    # Pinned image — content scrolls past it
+    b.append(band("One family on the hill", "Gathered in the chapel as brothers and sisters in Christ.",
+                  "cu-chapel-family.jpg"))
 
     # Story
     b.append(banner("Our Story", "On the hill since 1962", "", "muk-freedom-square.jpg",
@@ -78,7 +82,13 @@ def build_home():
     fc = [(h, paras(ps)) for h, ps in C.FELLOWSHIP_TYPES]
     b.append(f"""<section class="section"><div class="wrapper">
   {cards(fc)}
+  {gallery([("cu-sisters.jpg", "Sisters of the fellowship"),
+            ("cu-chapel-celebration.jpg", "Celebrating together"),
+            ("cu-full-hall.jpg", "The hall filled")])}
 </div></section>""")
+
+    b.append(band("Known by name", "In the fellowship a student is prayed for by name.",
+                  "cu-sisters.jpg"))
 
     # Gather
     b.append(banner("Gather With Us", "Through the week", "", "muk-benediction.jpg",
@@ -90,13 +100,16 @@ def build_home():
     b.append(f"""<section class="section section--alt" id="gather-content"><div class="wrapper">
   <h1 class="center">Our weekly rhythm</h1>
   <div class="cards">{rows}</div>
+  {gallery([("cu-full-hall.jpg", "A full hall"),
+            ("cu-chapel-family.jpg", "Gathered in the chapel"),
+            ("cu-celebration.jpg", "Marking the occasion together")])}
   <p class="center" style="margin-top:34px"><a class="btn btn--dark" href="/contact.html">Plan a visit</a></p>
 </div></section>""")
 
     # Night of redemption highlight
     b.append(banner("Night of Redemption", "The whole campus, one night",
                     "The Union&rsquo;s great open gathering at the University Sports Ground &mdash; worship, preaching and an open door for every student.",
-                    "muk-congregation.jpg", anchor="night",
+                    "cu-openair.jpg", anchor="night",
                     actions='<a class="btn" href="/night-of-redemption.html">Learn More</a>'))
 
     # Affiliations
@@ -108,7 +121,13 @@ def build_home():
         af.append((t, paras(ps)))
     b.append(f"""<section class="section" id="affiliations-content"><div class="wrapper">
   {cards(af)}
+  {gallery([("cu-handover.jpg", "Handing over to the next leaders"),
+            ("cu-awards.jpg", "Recognising those who have served"),
+            ("cu-portrait.jpg", "Serving the fellowship")], cols=3)}
 </div></section>""")
+
+    b.append(band("Beyond the hill", "Carrying the gospel to communities outside Kampala.",
+                  "cu-mission-outreach.jpg"))
 
     b.append(f"""<section class="section section--dark center"><div class="wrapper">
   <h1>There is a place for you here</h1>
@@ -137,10 +156,12 @@ def build_about():
   <ul>{vals}</ul>
   <h2>Interdenominational</h2>
   <p>The Union brings together students from many churches and denominations. We do not ask members to leave their congregations; we ask them to walk with fellow believers while they are on the hill.</p>
-  {gallery([("muk-congregation.jpg", "The Union gathered"),
-            ("muk-listening.jpg", "Under the word"),
-            ("muk-choir.jpg", "Leading worship")])}
+  {gallery([("cu-chapel-family.jpg", "The fellowship gathered"),
+            ("cu-full-hall.jpg", "Under the word"),
+            ("cu-choir.jpg", "Leading worship")])}
 </div></section>""")
+    b.append(band("Come as you are", "There is a place for you in this family.",
+                  "cu-chapel-celebration.jpg"))
     page("about.html", "Who We Are",
          "MUK CU is an interdenominational fellowship of Christian students at Makerere University, affiliated to FOCUS-Uganda.", "".join(b))
 
@@ -181,9 +202,9 @@ def build_fellowships():
   <p class="lead">{C.FELLOWSHIP_INTRO}</p>
   {''.join(body)}
   {quote('&ldquo;' + C.VISION + '&rdquo;', 'Our Vision')}
-  {gallery([("muk-listening.jpg", "A fellowship gathered"),
-            ("muk-benediction.jpg", "Sent out with blessing"),
-            ("muk-freshers.jpg", "Welcoming new students")])}
+  {gallery([("cu-chapel-family.jpg", "A fellowship gathered"),
+            ("cu-sisters.jpg", "Sisters of the fellowship"),
+            ("cu-full-hall.jpg", "The wider Union gathered")])}
 </div></section>""")
     b.append("""<section class="section section--dark center"><div class="wrapper">
   <h1>Not sure which fellowship fits?</h1>
@@ -213,9 +234,9 @@ def build_discipleship():
                       "muk-listening.jpg", "Following Jesus for life",
                       C.DISCIPLESHIP,
                       extra=quote('&ldquo;' + C.BELIEF + '&rdquo;', 'What We Believe'),
-                      gal=[("muk-listening.jpg", "Under the word"),
-                           ("muk-benediction.jpg", "Teaching and blessing"),
-                           ("muk-congregation.jpg", "The gathered Union")])
+                      gal=[("cu-full-hall.jpg", "Under the word"),
+                           ("cu-chapel-family.jpg", "The fellowship"),
+                           ("cu-chapel-celebration.jpg", "Growing together")])
     page("discipleship.html", "Discipleship",
          "Bible study, follow-up of new believers and personal mentoring in the fellowships of MUK CU.", "".join(b))
 
@@ -224,9 +245,18 @@ def build_evangelism():
     b = ministry_page("evangelism", "Evangelism &amp; Missions", "To every soul on campus",
                       "muk-freshers.jpg", "Reaching the campus and beyond",
                       C.EVANGELISM,
-                      gal=[("muk-freshers.jpg", "Reaching new students"),
-                           ("muk-freedom-square.jpg", "Freedom Square"),
-                           ("muk-congregation.jpg", "A campus gathered")])
+                      gal=[("cu-openair.jpg", "Open-air outreach"),
+                           ("cu-mission-outreach.jpg", "Sharing the gospel with the children"),
+                           ("cu-mission-children.jpg", "With the children on mission")])
+    b.append(band("To every soul", "Missions carry the work beyond the hill.",
+                  "cu-mission-village.jpg", tall=True))
+    b.append(f"""<section class="section"><div class="wrapper">
+  <h2>The mission field</h2>
+  <p>During recess and vacation terms students travel out in teams &mdash; preaching, serving and visiting homes. These are moments from those trips.</p>
+  {gallery([("cu-mission-village.jpg", "Visiting homes in the village"),
+            ("cu-mission-joy.jpg", "Joy on the mission road"),
+            ("cu-mission-children.jpg", "With the children")])}
+</div></section>""")
     page("evangelism.html", "Evangelism & Missions",
          "Personal witness, campus outreach and recess mission teams beyond Kampala.",
          "".join(b))
@@ -236,9 +266,9 @@ def build_worship():
     b = ministry_page("worship", "Praise &amp; Worship", "The sound of the Union",
                       "muk-choir.jpg", "Worship at the centre",
                       C.WORSHIP,
-                      gal=[("muk-choir.jpg", "The choir leads worship"),
-                           ("muk-congregation.jpg", "The Union in worship"),
-                           ("muk-speaker.jpg", "The word ministered")])
+                      gal=[("cu-choir.jpg", "The choir"),
+                           ("cu-full-hall.jpg", "The Union in worship"),
+                           ("cu-sisters.jpg", "Sisters serving")])
     page("worship.html", "Praise & Worship",
          "The choir, praise team and creative ministries of Makerere University Christian Union.",
          "".join(b))
@@ -271,9 +301,9 @@ def build_lunch_hour():
   <p class="lead">Lunch Hour is the Union&rsquo;s gathering in the middle of the academic day &mdash; worship, testimonies from members, and the ministry of the word. Visitors are welcomed at every meeting.</p>
   <p>Guest ministers join the Union through the year. Recordings of past meetings are published on the Union&rsquo;s YouTube channel.</p>
   <div class="cards">{rows}</div>
-  {gallery([("muk-congregation.jpg", "Lunch Hour gathered"),
-            ("muk-speaker.jpg", "The word ministered"),
-            ("muk-listening.jpg", "Students listening")])}
+  {gallery([("cu-full-hall.jpg", "The hall filled"),
+            ("cu-chapel-family.jpg", "Gathered in the chapel"),
+            ("cu-choir.jpg", "The choir leading")])}
   <p class="center" style="margin-top:34px">
     <a class="btn btn--dark" href="{C.YOUTUBE}" target="_blank" rel="noopener">Watch Past Meetings</a></p>
 </div></section>""")
@@ -288,9 +318,9 @@ def build_night():
   <h1>The Union&rsquo;s great open gathering</h1>
   {paras(C.NIGHT_OF_REDEMPTION)}
   {quote('<strong>An open door onto campus for the gospel.</strong>', plain=True)}
-  {gallery([("muk-congregation.jpg", "The campus gathered"),
-            ("muk-choir.jpg", "Worship through the night"),
-            ("muk-freedom-square.jpg", "Makerere University")])}
+  {gallery([("cu-openair.jpg", "Open-air gathering"),
+            ("cu-full-hall.jpg", "A full house"),
+            ("cu-choir.jpg", "Leading worship")])}
 </div></section>""")
     page("night-of-redemption.html", "Night of Redemption",
          "The Makerere Night of Redemption — MUK CU's flagship open-air gathering at the University Sports Ground.", "".join(b))
@@ -304,8 +334,14 @@ def build_events():
   {cards(ev)}
   <h2>Weekly gatherings</h2>
   <p>Lunch Hour meets Tuesdays and Fridays at midday; the prayer altar gathers Tuesdays and Thursdays from 6 to 8 in the evening. Fellowship meetings run through the week in the halls, colleges and hostels.</p>
+  {gallery([("cu-celebration.jpg", "Marking the occasion together"),
+            ("cu-chapel-celebration.jpg", "Celebrating in the chapel"),
+            ("cu-awards.jpg", "Recognising service"),
+            ("cu-evening.jpg", "An evening with the fellowship")], cols=4)}
   <p class="center" style="margin-top:34px"><a class="btn btn--dark" href="/contact.html">Ask About An Event</a></p>
 </div></section>""")
+    b.append(band("Moments that mark the year", "Fellowship, thanksgiving and celebration.",
+                  "cu-celebration.jpg"))
     page("events.html", "Events",
          "Night of Redemption, freshers' outreach, missions teams and alumni gatherings at Makerere University Christian Union.", "".join(b))
 
@@ -321,7 +357,12 @@ def build_leadership():
   <h2>Chaplaincy</h2>
   <p>{C.CHAPLAINCY}</p>
   {quote('<strong>Office bearers serve the fellowship; they do not sit above it.</strong>', plain=True)}
+  {gallery([("cu-handover.jpg", "Handing over to the next leaders"),
+            ("cu-awards.jpg", "Recognising those who have served"),
+            ("cu-portrait.jpg", "Serving the fellowship")])}
 </div></section>""")
+    b.append(band("Servant leadership", "Each generation hands the work to the next.",
+                  "cu-handover.jpg"))
     page("leadership.html", "Leadership",
          "The elected student executive, fellowship coordinators and dockets serving Makerere University Christian Union.", "".join(b))
 
@@ -336,9 +377,9 @@ def build_affiliations():
     b.append(f"""<section class="section"><div class="wrapper">
   <h1>Partners and family</h1>
   {cards(af)}
-  {gallery([("muk-chapel-group.jpg", "Gathered at St Francis Chapel"),
-            ("muk-remarks.jpg", "Serving the University community"),
-            ("muk-benediction.jpg", "The chaplaincy at work")])}
+  {gallery([("cu-chapel-family.jpg", "Gathered in the chapel"),
+            ("cu-awards.jpg", "Serving together"),
+            ("cu-handover.jpg", "Continuity of leadership")])}
 </div></section>""")
     page("affiliations.html", "Affiliations",
          "MUK CU is affiliated to FOCUS-Uganda and works alongside the Makerere University chaplaincy.", "".join(b))
@@ -383,8 +424,8 @@ def build_news():
 
 # ---------------------------------------------------------------- CONTACT
 def build_contact():
-    b = [banner("Contact", "Come and see", C.CONTACT_INTRO, "muk-chapel-crest.jpg",
-                short=True, pos="center 30%")]
+    b = [banner("Contact", "Come and see", C.CONTACT_INTRO, "cu-chapel-family.jpg",
+                short=True)]
     b.append(f"""<section class="section"><div class="wrapper">
   <div class="contact-grid">
     <div>

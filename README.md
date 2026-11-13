@@ -56,9 +56,33 @@ readable 5.2s  →  fade to black 0.85s  →  swap  →  fade up 0.85s  →  rep
 - Images are preloaded so the next slide never appears half-loaded.
 - `prefers-reduced-motion` disables the animation entirely.
 
-Interior banners use `background-attachment: fixed` on desktop for the same
-stacked/parallax feel as the original site (disabled on touch devices and for
-reduced motion, where fixed attachment is unreliable).
+## Pinned background images
+
+Images are **tied to the viewport** — the page content scrolls across them rather
+than carrying them along. This applies to every interior banner and to the
+full-bleed `band()` sections placed between content blocks.
+
+- `background-attachment: fixed` does the work in browsers that support it, at
+  **all screen widths**.
+- iOS Safari ignores that property, so `site.js` detects iOS and counter-scrolls
+  the layer with a `translate3d` on `requestAnimationFrame` — same pinned result.
+- `prefers-reduced-motion` and print stylesheets release the pin.
+
+The home hero slideshow is separate and was left unchanged.
+
+## Photography
+
+The gallery and band images are the Union's **own photographs**, supplied directly:
+chapel gatherings, the choir, a full hall, leadership handover and awards,
+celebrations, and mission trips (open-air outreach, village visits, children).
+15 photos, kept at their native resolution — no upscaling. Per-file provenance in
+`tools/cu_image_sources.json`.
+
+Campus/chapel context shots on the hero and history pages come from Makerere
+University News and Uganda Jubilee Network (`tools/muk_image_sources.json`).
+
+Captions are descriptive only — no names or roles have been invented for anyone
+pictured.
 
 ---
 
@@ -113,8 +137,11 @@ real campus, chapel and fellowship photographs. Per-file provenance is recorded 
       contact the executive. Add official mobile-money/bank details if desired.
 - [ ] **Newsletter** — front-end only; it shows a thank-you but stores nothing.
       The handler is at the bottom of `assets/js/site.js`.
-- [ ] **Photo rights** — images are press photographs from Makerere University
-      News and Uganda Jubilee Network. Confirm permission before public launch.
+- [ ] **Photo rights** — the Union's own photos were supplied directly. The hero and
+      history pages still use press photographs from Makerere University News and
+      Uganda Jubilee Network; confirm permission for those before public launch.
+- [ ] **Names/captions** — photos are captioned descriptively. Send names and dockets
+      if you want people identified (e.g. the leadership portrait and handover shots).
 
 ## Structure
 
@@ -126,10 +153,11 @@ real campus, chapel and fellowship photographs. Per-file provenance is recorded 
 │   ├── css/site.css        design system + hero slideshow
 │   ├── js/site.js          nav, hero cycle, lightbox, scroll-spy
 │   ├── fonts/              self-hosted woff2
-│   └── img/                13 files — campus photos + wordmark
+│   └── img/                26 files — the Union's photos, campus shots, wordmark
 └── tools/
     ├── build.py            page generator
     ├── content.py          all MUK CU copy
     ├── layout.py           head / header / hero / footer
-    └── muk_image_sources.json   photo provenance
+    ├── muk_image_sources.json   press photo provenance
+    └── cu_image_sources.json    supplied photo provenance
 ```

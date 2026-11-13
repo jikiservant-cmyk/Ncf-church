@@ -176,6 +176,24 @@ def hero_slideshow(slides, cue=True):
 """
 
 
+def band(title, desc, img, tall=False, actions="", pos="center center", anchor_id=None):
+    """Full-bleed image pinned to the viewport. Page content scrolls over it."""
+    cls = "band band--tall" if tall else "band"
+    aid = f' id="{anchor_id}"' if anchor_id else ""
+    dh = f'<div class="band__desc">{desc}</div>' if desc else ""
+    ah = f'<div class="band__actions">{actions}</div>' if actions else ""
+    th = f'<h2 class="band__title">{title}</h2>' if title else ""
+    return f"""<section class="{cls}"{aid}>
+  <div class="band__bg" style="background-image:url('/assets/img/{img}');background-position:{pos}"></div>
+  <div class="band__inner">
+    {th}
+    {dh}
+    {ah}
+  </div>
+</section>
+"""
+
+
 def gallery(images, cols=3):
     """images: list of (filename, caption)."""
     cls = "gallery" if cols == 3 else f"gallery gallery--{cols}"
